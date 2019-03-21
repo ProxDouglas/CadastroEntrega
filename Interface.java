@@ -8,7 +8,6 @@
 
 public interface Interface
 {
-    public int qtdAluno();
     public  String lerNome();
     public  int lerIdade();
     public  String lerRg();

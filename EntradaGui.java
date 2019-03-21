@@ -3,11 +3,6 @@ import javax.swing.JOptionPane;
 
 public class EntradaGui implements Interface
 {
-    public int qtdAluno(){
-        int qtdAluno = JOptionPane.showInputDialog("Insira a quantidade de alunos ");
-        return qtdAluno;
-    }
-    
     public String lerNome(){
         String nome = JOptionPane.showInputDialog("Insira o nome ");
         return nome;
