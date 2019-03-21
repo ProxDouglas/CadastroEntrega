@@ -8,22 +8,22 @@
 public class Pessoa
 {
 
-	private NomePessoa nome;
+	private String nome;
 	private int idade;
 	private String identify;
 		
 		
-	Pessoa (String nome, int idade, String identify)
+	public Pessoa()
 	{
-		this.nome = new NomePessoa(nome);
-		setIdade(idade);
-		setId(identify);
+		setNome(this.nome);
+		setIdade(this.idade);
+		setId(this.identify);
 			
 	}
 	
 	protected void setNome(String nome)
 	{
-		this.nome.setNome(nome);
+		this.nome = nome;
 	}
 	
 	protected void setIdade(int idade)
@@ -38,7 +38,7 @@ public class Pessoa
 	
 	public String getNome()
 	{
-		return nome.getNome();
+		return this.nome;
 	}
 	
 	public int getIdade()

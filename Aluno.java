@@ -12,8 +12,8 @@ public class Aluno extends Pessoa
 	private double nota;
 	private int semestre;
 
-	public Aluno(String nome, int idade, String indentify, String ra, int semestre) {
-		super(nome, idade, indentify);
+	public Aluno() {
+		super();
 		setRa(ra);
 		setSemestre(semestre);
 	}
