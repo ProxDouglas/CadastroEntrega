@@ -36,7 +36,7 @@ public class Cadastro
     
     public void deletar(String  ra){
         int k = 0;
-        while((ra != cad[k].getRa()) && (k < tamanho)){
+        do{
             k++;
             if(ra == cad[k].getRa()){
                 for(int j = tamanho-1; j > k; j--){
@@ -44,7 +44,7 @@ public class Cadastro
                 }
                 contador--;
              }
-        }
+        }while((ra != cad[k].getRa()) && (k < tamanho));
     }
     
     public void mostrar(){
