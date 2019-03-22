@@ -17,8 +17,7 @@ public class Pessoa
 	{
 		setNome(this.nome);
 		setIdade(this.idade);
-		setId(this.identify);
-			
+		setId(this.identify);	
 	}
 	
 	protected void setNome(String nome)

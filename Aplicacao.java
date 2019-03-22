@@ -3,15 +3,15 @@ import java.util.Scanner;
 class Aplicacao
 {
     public static void main(String args[]){
-        int opcao = 0, del;
+        int opcao = 0;
+        String ra;
         Cadastro cadAluno = new Cadastro(5);
-        Aluno a = new Aluno();
         Interface ent = new EntradaGui();
-        Scanner scan = new Scanner( System.in );
+        Scanner scan = new Scanner(System.in);
 
         while(opcao != 4){
             System.out.println("Portal do aluno");
-            System.out.println("1 - Inserir novo cadastro ");
+            System.out.println("1 - Inserir cadastro ");
             System.out.println("2 - Deletar cadastro");
             System.out.println("3 - Mostrar cadastro");
             System.out.println("4 - Sair");
@@ -20,6 +20,7 @@ class Aplicacao
             
             switch(opcao){
                 case 1:
+                Aluno a = new Aluno();
                 a.setNome(ent.lerNome());
                 a.setIdade(ent.lerIdade());
                 a.setId(ent.lerRg());
@@ -29,9 +30,9 @@ class Aplicacao
                 break;
 
                 case 2:
-                System.out.println("Qual o numero do cadastrado voce deseja deletar: ");
-                del = scan.nextInt();
-                cadAluno.deletar(a, del);
+                System.out.println("Qual o RA do cadastrado voce deseja deletar: ");
+                ra = scan.nextLine();
+                cadAluno.deletar(ra);
                 break;
                 
                 case 3:
