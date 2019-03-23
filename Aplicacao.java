@@ -4,9 +4,8 @@ class Aplicacao
 {
     public static void main(String args[]){
         int opcao = 0;
-        String ra;
         Cadastro cadAluno = new Cadastro(5);
-        Interface ent = new EntradaGui();
+        Interface ent = new EntradaConsole();
         Scanner scan = new Scanner(System.in);
 
         while(opcao != 4){
@@ -30,7 +29,9 @@ class Aplicacao
                 break;
 
                 case 2:
+                String ra;
                 System.out.println("Qual o RA do cadastrado voce deseja deletar: ");
+                ra = scan.nextLine();
                 ra = scan.nextLine();
                 cadAluno.deletar(ra);
                 break;

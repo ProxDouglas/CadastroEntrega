@@ -20,6 +20,7 @@ public class EntradaConsole implements Interface
     public String lerRg(){
         System.out.println("Insira o Rg ");
         String rg = scan.nextLine();
+        rg = scan.nextLine();
         return rg;
     }
 

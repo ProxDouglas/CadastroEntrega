@@ -35,16 +35,23 @@ public class Cadastro
     }
     
     public void deletar(String  ra){
-        int k = 0;
+        int k = 1;
+        System.out.println("RA: "+ ra);
+        System.out.println("RA: "+ cad[k-1].getRa());
         do{
-            k++;
-            if(ra == cad[k].getRa()){
-                for(int j = tamanho-1; j > k; j--){
-                    cad[j-1] = cad[j];
+            if(ra.equals(cad[k-1].getRa())){
+                if(k-1 == 0){
+                    cad[0] = null;
                 }
-                contador--;
-             }
-        }while((ra != cad[k].getRa()) && (k < tamanho));
+                if(k-1 != 0){
+                    for(int j = tamanho-1; j > k-1; j--){
+                        cad[j-1] = cad[j];
+                    }
+                    contador--;
+                }
+            }
+             k++;
+        }while(!ra.equals(cad[k-2].getRa()) && (k < tamanho + 2));
     }
     
     public void mostrar(){
