@@ -1,4 +1,3 @@
-
 import java.util.Scanner;
 
 public class EntradaConsole implements Interface
@@ -7,7 +6,7 @@ public class EntradaConsole implements Interface
     
     public String lerNome(){
         System.out.println("Insira o nome ");
-        String nome = scan.nextLine();
+        String nome = scan.next();
         return nome;
     }
 

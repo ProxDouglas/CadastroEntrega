@@ -35,6 +35,25 @@ public class Cadastro
     }
     
     public void deletar(String  ra){
+        int k = 0;
+        System.out.println("RA: "+ ra);
+        //System.out.println("RA: "+ cad[k].getRa());
+        do{
+            if(ra.equals(cad[k].getRa())){
+                for(int j = k; j < tamanho-1; j++){
+                    cad[j] = cad[j+1];
+                }
+                if(k == tamanho-1){
+                    cad[k] = null;
+                }
+                contador--;
+                
+            }
+             k++;
+        }while(!ra.equals(cad[k-1].getRa()) && (k < contador));
+    }
+    
+   /* public void deletar(String  ra){
         int k = 1;
         System.out.println("RA: "+ ra);
         System.out.println("RA: "+ cad[k-1].getRa());
@@ -52,7 +71,7 @@ public class Cadastro
             }
              k++;
         }while(!ra.equals(cad[k-2].getRa()) && (k < tamanho + 2));
-    }
+    }*/
     
     public void mostrar(){
         

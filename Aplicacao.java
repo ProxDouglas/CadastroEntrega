@@ -31,8 +31,8 @@ class Aplicacao
                 case 2:
                 String ra;
                 System.out.println("Qual o RA do cadastrado voce deseja deletar: ");
-                ra = scan.nextLine();
-                ra = scan.nextLine();
+                ra = scan.next();
+                //ra = scan.nextLine();
                 cadAluno.deletar(ra);
                 break;
                 
