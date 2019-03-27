@@ -19,8 +19,8 @@ class Aplicacao
             
             switch(opcao){
                 case 1:
-                Aluno a = new Aluno();
-                a.setNome(ent.lerNome());
+                Aluno a = new Aluno(ent.lerNome());
+                //a.setNome(ent.lerNome());
                 a.setIdade(ent.lerIdade());
                 a.setId(ent.lerRg());
                 a.setRa(ent.lerRa());

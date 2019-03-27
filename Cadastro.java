@@ -1,56 +1,66 @@
-
-public class Cadastro
-{
-    private Aluno cad[];
-    private int tamanho;
-    private int contador;
-    
-    public Cadastro(int tam){
-        cad = new Aluno[tam];
-        tamanho = tam;
-        contador = 0;
-        for(int i = 0; i < tam; i++){
-            if(cad[i] != null){
-                cad[i] = null;
-            }
-        }
+    public class Cadastro
+    {
+        private Aluno cad[];
+        private int tamanho;
+        private int contador;
         
-     }
-    
-    /*public void inserir(Aluno a){
-        int aux = contador;
-        cad[aux] = a;
-        contador++;
-    }*/
-
-    public void inserir(Aluno a){
-     int aux = contador + 1;
-         for(int i = 0; i < aux; i++){
-            if(cad[i] == null){
-                cad[i] = a;
-                contador++;
+        public Cadastro(int tam){
+            cad = new Aluno[tam];
+            tamanho = tam;
+            contador = 0;
+            for(int i = 0; i < tam; i++){
+                if(cad[i] != null){
+                    cad[i] = null;
+                }
             }
+            
+         }
+        
+        /*public void inserir(Aluno a){
+            int aux = contador;
+            cad[aux] = a;
+            contador++;
+        }*/
+    
+        public void inserir(Aluno a){
+            int aux = contador + 1;
+            if(contador < tamanho){
+             for(int i = 0; i < aux; i++){ 
+               if(cad[i] == null ){
+                    cad[i] = a;
+                    contador++;
+               }
+            System.out.println("AQUI"+cad[i].getRa()+ "|" + a.getRa());
+                if(cad[0] != null){
+                    if(cad[i].getRa().equals(a.getRa()) && i<=contador){
+                        i = aux+1;
+                    }
+                }
+            
+        }
+        }else{
+              System.out.println("Lista cheia\n");
         }
         
     }
     
     public void deletar(String  ra){
-        int k = 0;
+        int k = 0, j;
         System.out.println("RA: "+ ra);
         //System.out.println("RA: "+ cad[k].getRa());
         do{
             if(ra.equals(cad[k].getRa())){
-                for(int j = k; j < tamanho-1; j++){
+                for(j = k; j < tamanho-1; j++){
                     cad[j] = cad[j+1];
                 }
-                if(k == tamanho-1){
-                    cad[k] = null;
+                if(j == tamanho-1){
+                    cad[j] = null;
                 }
                 contador--;
-                
+                k = contador+1;
             }
              k++;
-        }while(!ra.equals(cad[k-1].getRa()) && (k < contador));
+        }while(k < contador);
     }
     
    /* public void deletar(String  ra){
