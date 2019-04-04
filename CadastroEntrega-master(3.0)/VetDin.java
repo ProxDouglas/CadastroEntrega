@@ -5,7 +5,7 @@
  * @author (seu nome) 
  * @version (número de versão ou data)
  */
-public class VetDin
+public class VetDin implements IArmazenador
 {
     private int tamanho;
     private int contador;
@@ -47,7 +47,7 @@ public class VetDin
         }
 
     }
-
+    
     public void deletar(String  ra){
         int k = 0, j;
         System.out.println("RA: "+ ra);
@@ -66,6 +66,7 @@ public class VetDin
             k++;
         }while(k < contador);
     }
+    
     public void mostrar(){
         
         if(contador > 0){

@@ -1,10 +1,12 @@
-    public class Cadastro implements ICadastro
+    public class Cadastro
     {
         //private Aluno cad[];
-        private int tamanho;
-        private int contador;
-        private int n;
-        VetDin vet = new VetDin(n);
+        //private int tamanho;
+        //private int contador;
+        int opcao = 0;
+        private int n = 0;
+        //VetDin vet = new VetDin(n);
+        IArmazenador arm = new VetDin(n);
         /*public Cadastro(int tam){
             cad = new Aluno[tam];
             tamanho = tam;
@@ -85,6 +87,7 @@
         }
     }
     */
+
     
     
 }

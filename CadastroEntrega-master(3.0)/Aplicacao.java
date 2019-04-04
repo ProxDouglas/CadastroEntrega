@@ -4,7 +4,7 @@ class Aplicacao
 {
     public static void main(String args[]){
         int opcao = 0;
-        Cadastro cadAluno = new Cadastro(5);
+        Cadastro cadAluno = new Cadastro();
         Interface ent = new EntradaConsole();
         Scanner scan = new Scanner(System.in);
 
@@ -19,13 +19,14 @@ class Aplicacao
             
             switch(opcao){
                 case 1:
-                Aluno a = new Aluno(ent.lerNome());
+                //Aluno a = new Aluno(ent.lerNome());
                 //a.setNome(ent.lerNome());
-                a.setIdade(ent.lerIdade());
-                a.setId(ent.lerRg());
-                a.setRa(ent.lerRa());
-                a.setSemestre(ent.lerSemestre());
-                cadAluno.inserir(a);
+                cadAluno.arm.a.setNome(ent.lerNome());
+                cadAluno.arm.a.setIdade(ent.lerIdade());
+                cadAluno.arm.a.setId(ent.lerRg());
+                cadAluno.arm.a.setRa(ent.lerRa());
+                cadAluno.arm.a.setSemestre(ent.lerSemestre());
+                cadAluno.arm.inserir(cadAluno.arm.a);
                 break;
 
                 case 2:
@@ -33,11 +34,11 @@ class Aplicacao
                 System.out.println("Qual o RA do cadastrado voce deseja deletar: ");
                 ra = scan.next();
                 //ra = scan.nextLine();
-                cadAluno.deletar(ra);
+                cadAluno.arm.deletar(ra);
                 break;
                 
                 case 3:
-                cadAluno.mostrar();
+                cadAluno.arm.mostrar();
                 break;
             }
         }
