@@ -1,11 +1,34 @@
-    public class Cadastro
+public class Cadastro
     {
         //private Aluno cad[];
         //private int tamanho;
         //private int contador;
         private int n;
         public IArmazenador arm;
+        public Cadastro(){
+           // n = tam;
+            arm = new VetDin();
+        }
+        public void inserir(Aluno a){
+         
+            arm.inserir(a);
+          
+        }
+        
+        public void deletar(String ra){
+         
+            arm.deletar(ra);
+          
+        }
+        
+        public void mostrar(){
+         
+            arm.mostrar();
+          
+        }
+        
         //VetDin vet = new VetDin(n);
+        /*
         public Cadastro(int tam){
             n = tam;
             arm = new VetDin(n);
@@ -36,7 +59,7 @@
             }
             
          }
-        
+        */
         /*public void inserir(Aluno a){
             int aux = contador;
             cad[aux] = a;
@@ -109,4 +132,3 @@
     
     
 }
-   

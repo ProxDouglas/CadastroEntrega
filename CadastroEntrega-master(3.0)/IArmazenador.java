@@ -8,8 +8,6 @@
 
 public interface IArmazenador
 {
-    String nome = "";
-    Aluno a = new Aluno(nome);
     public void inserir(Aluno a);
     public void deletar(String ra);
     public void mostrar();
