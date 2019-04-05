@@ -3,10 +3,28 @@
         //private Aluno cad[];
         //private int tamanho;
         //private int contador;
-        int opcao = 0;
-        private int n = 0;
+        private int n;
+        public IArmazenador arm;
         //VetDin vet = new VetDin(n);
-        IArmazenador arm = new VetDin(n);
+        public Cadastro(int tam){
+            n = tam;
+            arm = new VetDin(n);
+        }
+        public void cadastrarNome(String nome){
+                arm.a.setNome(nome);
+        }
+        public void cadastrarIdade(int idade){
+                arm.a.setIdade(idade);
+        }
+        public void cadastrarRg(String rg){
+                arm.a.setId(rg);
+        }
+        public void cadastrarRa(String ra){
+                arm.a.setRa(ra);
+        }
+        public void cadastrarSemestre(int semestre){
+                arm.a.setSemestre(semestre);
+        }
         /*public Cadastro(int tam){
             cad = new Aluno[tam];
             tamanho = tam;

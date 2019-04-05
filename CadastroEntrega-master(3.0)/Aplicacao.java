@@ -4,8 +4,8 @@ class Aplicacao
 {
     public static void main(String args[]){
         int opcao = 0;
-        Cadastro cadAluno = new Cadastro();
-        Interface ent = new EntradaConsole();
+        int n = 0;
+        Interface ent = new EntradaGui();
         Scanner scan = new Scanner(System.in);
 
         while(opcao != 4){
@@ -14,19 +14,20 @@ class Aplicacao
             System.out.println("2 - Deletar cadastro");
             System.out.println("3 - Mostrar cadastro");
             System.out.println("4 - Sair");
-
+            Cadastro cadAluno = new Cadastro(n);
             opcao = scan.nextInt();
             
             switch(opcao){
                 case 1:
                 //Aluno a = new Aluno(ent.lerNome());
                 //a.setNome(ent.lerNome());
-                cadAluno.arm.a.setNome(ent.lerNome());
-                cadAluno.arm.a.setIdade(ent.lerIdade());
-                cadAluno.arm.a.setId(ent.lerRg());
-                cadAluno.arm.a.setRa(ent.lerRa());
-                cadAluno.arm.a.setSemestre(ent.lerSemestre());
+                cadAluno.cadastrarNome(ent.lerNome());
+                cadAluno.cadastrarIdade(ent.lerIdade());
+                cadAluno.cadastrarRg(ent.lerRg());
+                cadAluno.cadastrarRa(ent.lerRa());
+                cadAluno.cadastrarSemestre(ent.lerSemestre());
                 cadAluno.arm.inserir(cadAluno.arm.a);
+                n++;
                 break;
 
                 case 2:

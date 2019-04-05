@@ -10,7 +10,6 @@ public class VetDin implements IArmazenador
     private int tamanho;
     private int contador;
     private Aluno cad[];
-    
     public VetDin(int tam){
         cad = new Aluno[tam];
         tamanho = tam;
