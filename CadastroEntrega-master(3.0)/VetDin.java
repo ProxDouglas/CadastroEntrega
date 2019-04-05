@@ -35,50 +35,60 @@ public class VetDin implements IArmazenador
     
     public void inserir(Aluno a){
         int i, verif = 0;
+        String ra;
         if(cad == null){
             setCad(new Aluno[1]);
             cad[0] = a;
             setTamanho(getTamanho()+1);
         }else{
+            
             i=0;
-            while(i < getTamanho() && !cad[i].getRa().equals(a.getRa())){
-                i++;
+            while(i < cad.length-1 && !a.getRa().equals(cad[i].getRa())){
+                //if(!(cad[i].getRa().equals(a.getRa())){
+                    i = i+1;
+                //}
             }
-            if(cad[i].getRa().equals(a.getRa())){
+            if(a.getRa().equals(cad[i].getRa())){
                 verif = 1; 
             }
             if(verif == 0){
                 Aluno aux[] = new Aluno[cad.length + 1];
-                setTamanho(cad.length + 1);
         
-                for(i = 0; i < cad.length; i++ ){
-                    aux[i] = cad[i];
+                for (i = 0; i < cad.length; i++){
+                    if (cad[i] != null) {
+                        aux[i] = cad[i];
+                    }
                 }
                 aux[aux.length - 1] = a;
                 setCad(aux);
-                setTamanho(getTamanho()+1);
+                setTamanho(getTamanho() + 1);
             }
         }
     }
     
     
     public void deletar(String  ra){
-    /*    int k = 0, j;
-        System.out.println("RA: "+ ra);
+        int k = 0, j;
+        int contador = 0;
+        //System.out.println("RA: "+ ra);
         //System.out.println("RA: "+ cad[k].getRa());
+        contador = cad.length-1;
         do{
             if(ra.equals(cad[k].getRa())){
+                Aluno[] aux = new Aluno[cad.length - 1];
+                setTamanho(getTamanho()-1);
                 for(j = k; j < tam-1; j++){
                     cad[j] = cad[j+1];
                 }
-                if(j == tam-1){
-                    cad[j] = null;
+                for(j = 0; j < cad.length - 2; j++ ){
+                    aux[j] = cad[j];
                 }
+                setCad(aux);
                 contador--;
                 k = contador+1;
             }
             k++;
-        }while(k < contador);*/
+        }while(k < contador);
     }
     
     public void mostrar(){

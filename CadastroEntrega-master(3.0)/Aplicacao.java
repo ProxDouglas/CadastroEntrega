@@ -34,7 +34,7 @@ class Aplicacao
                 System.out.println("Qual o RA do cadastrado voce deseja deletar: ");
                 ra = scan.next();
                 //ra = scan.nextLine();
-                cadAluno.deletar(ra);
+                cadAluno.arm.deletar(ra);
                 break;
                 
                 case 3:
