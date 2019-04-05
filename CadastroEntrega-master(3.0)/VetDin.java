@@ -77,11 +77,15 @@ public class VetDin implements IArmazenador
             if(ra.equals(cad[k].getRa())){
                 Aluno[] aux = new Aluno[cad.length - 1];
                 setTamanho(getTamanho()-1);
-                for(j = k; j < tam-1; j++){
-                    cad[j] = cad[j+1];
+                for(j = k; j < cad.length-1; j++){
+                    if (cad[j] != null) {
+                        cad[j] = cad[j+1];
+                    }
                 }
-                for(j = 0; j < cad.length - 2; j++ ){
-                    aux[j] = cad[j];
+                for(j = 0; j < aux.length; j++ ){
+                    if (cad[j] != null) {
+                        aux[j] = cad[j];
+                    }
                 }
                 setCad(aux);
                 contador--;
