@@ -1,34 +1,34 @@
-
 public class Disciplinas
 {
-    private String disc;
-    private String prof;
+    private NomeDisciplina disc;
+    private NomeProfessor prof;
     private double nota;
     
-    public Disciplinas(){
-        setDisc(null);
-        setProf(null);
+    public Disciplinas(String disc, String prof){
+        this.disc = new NomeDisciplina(disc);
+        this.prof = new NomeProfessor(prof);
+        //setProf(null);
         setNota(0);
     }
     
-    private void setDisc(String ra)
+    public void setDisciplina(String disc)
     {
-        this.disc = disc;
+        this.disc.setDisciplina(disc);
     }
     
-    private void setProf(String prof)
+    public void setProf(String prof)
     {
-        this.prof = prof;
+        this.prof = new NomeProfessor(prof);
     }
     
-    private void setNota(double nota)
+    public void setNota(double nota)
     {
         this.nota = nota;
     }
     
-    public String getDisc()
+    public String getDisciplina()
     {
-        return this.disc;
+        return disc.getDisciplina();
     }
     
     public double getNota()
@@ -38,6 +38,6 @@ public class Disciplinas
     
     public String getProf()
     {
-        return this.prof;
+        return prof.getProfessor();
     }
 }

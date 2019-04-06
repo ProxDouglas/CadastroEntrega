@@ -27,4 +27,26 @@ public class EntradaGui implements Interface
      int semestre = Integer.parseInt(JOptionPane.showInputDialog("Insira o semestre"));
      return semestre;
     }
+    
+    public int lerQTDisciplinas(){
+        int tam = Integer.parseInt(JOptionPane.showInputDialog("Insira quantas disciplinas"));
+        return tam;
+    }
+    
+    public String lerDisciplinas(){
+        String disc = JOptionPane.showInputDialog("Insira a Disciplina");
+        return disc;
+    }
+    
+    public String lerProfessor(){
+        String prof = JOptionPane.showInputDialog("Insira o Professor");
+        return prof;
+    }
+    
+    public int lerNota(){
+        int nota = Integer.parseInt(JOptionPane.showInputDialog("Insira quantas disciplinas"));
+        return nota;
+    }
+    
+    
 }

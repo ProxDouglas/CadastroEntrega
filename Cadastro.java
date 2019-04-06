@@ -1,10 +1,54 @@
-    public class Cadastro
+public class Cadastro
     {
-        private Aluno cad[];
-        private int tamanho;
-        private int contador;
+        //private Aluno cad[];
+        //private int tamanho;
+        //private int contador;
+        private int n;
+        public IArmazenador arm;
+        public Cadastro(){
+           // n = tam;
+            arm = new VetDin();
+        }
+        public void inserir(Aluno a){
+         
+            arm.inserir(a);
+          
+        }
         
+        public void deletar(String ra){
+         
+            arm.deletar(ra);
+          
+        }
+        
+        public void mostrar(){
+         
+            arm.mostrar();
+          
+        }
+        
+        //VetDin vet = new VetDin(n);
+        /*
         public Cadastro(int tam){
+            n = tam;
+            arm = new VetDin(n);
+        }
+        public void cadastrarNome(String nome){
+                arm.a.setNome(nome);
+        }
+        public void cadastrarIdade(int idade){
+                arm.a.setIdade(idade);
+        }
+        public void cadastrarRg(String rg){
+                arm.a.setId(rg);
+        }
+        public void cadastrarRa(String ra){
+                arm.a.setRa(ra);
+        }
+        public void cadastrarSemestre(int semestre){
+                arm.a.setSemestre(semestre);
+        }
+        /*public Cadastro(int tam){
             cad = new Aluno[tam];
             tamanho = tam;
             contador = 0;
@@ -15,12 +59,12 @@
             }
             
          }
-        
+        */
         /*public void inserir(Aluno a){
             int aux = contador;
             cad[aux] = a;
             contador++;
-        }*/
+        }
     
         public void inserir(Aluno a){
             int aux = contador + 1;
@@ -30,9 +74,12 @@
                     cad[i] = a;
                     contador++;
                }
-            System.out.println("AQUI"+cad[i].getRa()+ "|" + a.getRa());
+            //System.err.println("AQUI"+cad[i].getId()+ "|" + a.getId());
                 if(cad[0] != null){
                     if(cad[i].getRa().equals(a.getRa()) && i<=contador){
+                        i = aux+1;
+                    }else
+                    if(cad[i].getId().equals(a.getId()) && i<=contador){
                         i = aux+1;
                     }
                 }
@@ -61,28 +108,10 @@
             }
              k++;
         }while(k < contador);
-    }
-    
-   /* public void deletar(String  ra){
-        int k = 1;
-        System.out.println("RA: "+ ra);
-        System.out.println("RA: "+ cad[k-1].getRa());
-        do{
-            if(ra.equals(cad[k-1].getRa())){
-                if(k-1 == 0){
-                    cad[0] = null;
-                }
-                if(k-1 != 0){
-                    for(int j = tamanho-1; j > k-1; j--){
-                        cad[j-1] = cad[j];
-                    }
-                    contador--;
-                }
-            }
-             k++;
-        }while(!ra.equals(cad[k-2].getRa()) && (k < tamanho + 2));
     }*/
     
+    
+    /*
     public void mostrar(){
         
         if(contador > 0){
@@ -98,7 +127,8 @@
             System.out.println("Nenhum contato cadastrado!\n");
         }
     }
+    */
+
     
     
 }
-   

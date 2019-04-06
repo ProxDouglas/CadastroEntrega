@@ -34,4 +34,28 @@ public class EntradaConsole implements Interface
         int semestre = scan.nextInt();
         return semestre;
      }
+     
+    public int lerQTDisciplinas(){
+        System.out.println("Insira o quantas disciplinas ");
+        int qtd = scan.nextInt();
+        return qtd;
+    }
+    
+    public String lerDisciplinas(){
+        System.out.println("Insira a Disciplina ");
+        String disc = scan.nextLine();
+        return disc;
+    }
+    
+    public String lerProfessor(){
+        System.out.println("Insira o Professor ");
+        String prof = scan.nextLine();
+        return prof;
+    }
+    
+    public int lerNota(){
+        System.out.println("Insira a nota");
+        int nota = scan.nextInt();
+        return nota;
+    }
 }
