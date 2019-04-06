@@ -4,14 +4,13 @@ class Aplicacao
 {
     public static void main(String args[]){
         int opcao = 0;
-        int i;
+        int i, qtdisc;
         
         Interface ent = new EntradaGui();
         Cadastro cadAluno = new Cadastro();
         Scanner scan = new Scanner(System.in);
 
         while(opcao != 4){
-            i = 0;
             System.out.println("Portal do aluno");
             System.out.println("1 - Inserir cadastro ");
             System.out.println("2 - Deletar cadastro");
@@ -29,11 +28,13 @@ class Aplicacao
                 a.setRa(ent.lerRa());
                 a.setSemestre(ent.lerSemestre());
                 cadAluno.arm.inserir(a);
-                a.setDiscVet(ent.lerQTDisciplinas());
+                qtdisc = ent.lerQTDisciplinas();
+                a.setDiscVet(qtdisc);
                 i = 0;
-                 while(i<ent.lerQTDisciplinas()){
-                     a.disc[i].setDisciplina(ent.lerDisciplinas());
-                     a.disc[i].setProf(ent.lerProfessor());
+                 while(i<qtdisc){
+                     Disciplinas d = new Disciplinas(ent.lerDisciplinas(), ent.lerProfessor());
+                     a.setDisc(d, i);
+                     i++;
                  }  
                  
                 

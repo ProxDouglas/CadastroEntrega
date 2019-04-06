@@ -96,7 +96,7 @@ public class VetDin implements IArmazenador
     }
     
     public void mostrar(){
-        
+        int j =0;
         if(cad.length != 0){
             int contador = cad.length;
             for(int i = 0; i < contador; i++){
@@ -105,6 +105,18 @@ public class VetDin implements IArmazenador
                 System.out.println("RG: "+ cad[i].getId() + "\n");
                 System.out.println("RA: "+ cad[i].getRa() + "\n");
                 System.out.println("Semestre: "+ cad[i].getSemestre() + "\n");
+                System.out.println("Quantidade de Disciplinas: "+ cad[i].getDisc().length + "\n");
+                
+                while(j<cad[i].getDisc().length){
+                    System.out.println("Semestre: "+ cad[i].disc[j].getDisciplina() + "\n");
+                    System.out.println("Semestre: "+ cad[i].disc[j].getProf() + "\n");
+                    //System.out.println("Semestre: "+ cad[i].disc[j].getNota() + "\n");
+                    if(cad[i].getDisc().length>0 && j<cad[i].getDisc().length-2){
+                        System.out.println("_______________________________\n");
+                    }
+                    j++;
+                }
+                System.out.println("\n---------------------------------\n");
             }
         }
         else{

@@ -44,7 +44,7 @@ public class EntradaGui implements Interface
     }
     
     public int lerNota(){
-        int nota = Integer.parseInt(JOptionPane.showInputDialog("Insira quantas disciplinas"));
+        int nota = Integer.parseInt(JOptionPane.showInputDialog("Insira a nota"));
         return nota;
     }
     

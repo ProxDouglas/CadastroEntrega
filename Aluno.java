@@ -58,9 +58,9 @@ public class Aluno extends Pessoa
         return this.semestre;
     }
     
-    public void setDisc(Disciplinas[] disc, int i)
+    public void setDisc(Disciplinas disc, int i)
     {
-        this.disc[i] = disc[i];
+        this.disc[i] = disc;
     }
     
     public Disciplinas[] getDisc()
