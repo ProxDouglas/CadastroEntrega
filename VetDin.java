@@ -108,8 +108,8 @@ public class VetDin implements IArmazenador
                 System.out.println("Quantidade de Disciplinas: "+ cad[i].getDisc().length + "\n");
                 
                 while(j<cad[i].getDisc().length){
-                    System.out.println("Semestre: "+ cad[i].disc[j].getDisciplina() + "\n");
-                    System.out.println("Semestre: "+ cad[i].disc[j].getProf() + "\n");
+                    System.out.println("Disciplina: "+ cad[i].disc[j].getDisciplina() + "\n");
+                    System.out.println("Professor: "+ cad[i].disc[j].getProf() + "\n");
                     //System.out.println("Semestre: "+ cad[i].disc[j].getNota() + "\n");
                     if(cad[i].getDisc().length>0 && j<cad[i].getDisc().length-2){
                         System.out.println("_______________________________\n");
