@@ -44,9 +44,7 @@ public class VetDin implements IArmazenador
             
             i=0;
             while(i < cad.length-1 && !a.getRa().equals(cad[i].getRa())){
-                //if(!(cad[i].getRa().equals(a.getRa())){
                     i = i+1;
-                //}
             }
             if(a.getRa().equals(cad[i].getRa())){
                 verif = 1; 
@@ -70,8 +68,6 @@ public class VetDin implements IArmazenador
     public void deletar(String  ra){
         int k = 0, j;
         int contador = 0;
-        //System.out.println("RA: "+ ra);
-        //System.out.println("RA: "+ cad[k].getRa());
         contador = cad.length-1;
         do{
             if(ra.equals(cad[k].getRa())){

@@ -1,3 +1,11 @@
+/**
+ * Armazena o nome de uma professor. Inverte nome e limpa espaços extras 
+ * (operaçoes herdados da classe pai).
+ * Retorna o nome do professor em formato de bibliografia
+ * 
+ * @author Douglas Cavalcanti, Gabriel Ferreira, Raul Costa 
+ * @version 1.0 2019/04/09
+ */
 
 public class NomeProfessor extends Texto{
 	// Atributos

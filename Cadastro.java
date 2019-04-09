@@ -1,8 +1,5 @@
 public class Cadastro
     {
-        //private Aluno cad[];
-        //private int tamanho;
-        //private int contador;
         private int n;
         public IArmazenador arm;
         public Cadastro(){

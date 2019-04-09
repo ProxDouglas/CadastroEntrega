@@ -3,8 +3,8 @@
  * (operaçoes herdados da classe pai).
  * Retorna o nome da pessoa em formato de bibliografia
  * 
- * @author Julio Arakaki 
- * @version 1.0 2019/02/29
+ * @author Douglas Cavalcanti, Gabriel Ferreira, Raul Costa 
+ * @version 1.0 2019/04/09
  */
 public class NomePessoa extends Texto{
 	// Atributos
