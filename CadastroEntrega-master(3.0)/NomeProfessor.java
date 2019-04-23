@@ -1,34 +1,34 @@
 /**
- * Armazena o nome de uma pessoa. Inverte nome e limpa espaços extras 
+ * Armazena o nome de uma professor. Inverte nome e limpa espaços extras 
  * (operaçoes herdados da classe pai).
- * Retorna o nome da pessoa em formato de bibliografia
+ * Retorna o nome do professor em formato de bibliografia
  * 
- * @author Julio Arakaki 
- * @version 1.0 2019/02/29
+ * @author Douglas Cavalcanti, Gabriel Ferreira, Raul Costa 
+ * @version 1.0 2019/04/09
  */
-public class NomePessoa extends Texto{
+
+public class NomeProfessor extends Texto{
 	// Atributos
-	private String nome;
-	
+	private String prof;
 
 	// Construtores
-	public NomePessoa(String nome){
-		super(nome);
-		setNome(super.getTxt());
+	public NomeProfessor(String prof){
+		super(prof);
+		setProfessor(super.getTxt());
 	}
 
 	/**
 	 * @return the nome
 	 */
-	public String getNome() {
-		return nome;
+	public String getProfessor() {
+		return prof;
 	}
 
 	/**
 	 * @param nome the nome to set
 	 */
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setProfessor(String prof) {
+		this.prof = prof;
 	}
 	
 	
@@ -44,10 +44,10 @@ public class NomePessoa extends Texto{
 	 * Retorna nome bibliografico
 	 * @return sBib nome bibliografico
 	 */
-	public String getNomeBiblio(){
+	public String getDiscBiblio(){
 		
 		// Separa as palavras
-		String vts[] = getNome().split(" ");
+		String vts[] = getProfessor().split(" ");
 		int qtd = vts.length;
 		
 		String sBib = vts[qtd-1] + ", "; // ultimo nome + a virgula

@@ -1,47 +1,52 @@
-import java.util.Scanner;
-
-class Aplicacao
+/**
+ * Escreva a descrição da classe Aplicacao aqui.
+ * 
+ * @author (seu nome) 
+ * @version (número de versão ou data)
+ */
+public class Aplicacao
 {
     public static void main(String args[]){
-        int opcao = 0;
-        
-        Interface ent = new EntradaGui();
         Cadastro cadAluno = new Cadastro();
-        Scanner scan = new Scanner(System.in);
+        
+        EntradaGui ent = new EntradaGui();
+        String nome1 = ent.lerNome();
+        
+        Disciplinas discs = new Disciplinas();
+        Disciplina d1 = new Disciplina ("Lab Est Dinamicas", "LED", 8.9f);
+        Disciplina d2 = new Disciplina ("Computacao Grafica e Processamento de Imagens", 
+                            "CGPI", 5.6f);
+        discs.inserir(d1);                 
+        discs.inserir(d2);  
+        
+        Aluno a1 = new Aluno(nome1, 21, "aa1", "dd1", 1, discs);
+                
+        Aluno a2 = new Aluno("Ze2", 22, "aa2", "dd2", 2, discs);
+        Aluno a3 = new Aluno("Ze3", 23, "aa3", "dd3", 3, discs);
+        cadAluno.inserir(a1);
+        cadAluno.inserir(a2);
+        cadAluno.inserir(a3);
+        
+        cadAluno.imprimir();
+        
+        cadAluno.remover("dd2");
 
-        while(opcao != 4){
-            System.out.println("Portal do aluno");
-            System.out.println("1 - Inserir cadastro ");
-            System.out.println("2 - Deletar cadastro");
-            System.out.println("3 - Mostrar cadastro");
-            System.out.println("4 - Sair");
-            
-            opcao = scan.nextInt();
-            
-            switch(opcao){
-                case 1:
-                Aluno a = new Aluno(ent.lerNome());
-                
-                a.setIdade(ent.lerIdade());
-                a.setId(ent.lerRg());
-                a.setRa(ent.lerRa());
-                a.setSemestre(ent.lerSemestre());
-                cadAluno.arm.inserir(a);
-                break;
+        System.out.println("(removido dd2): ");
+        cadAluno.imprimir();
 
-                case 2:
-                String ra;
-                System.out.println("Qual o RA do cadastrado voce deseja deletar: ");
-                ra = scan.next();
-                //ra = scan.nextLine();
-                cadAluno.arm.deletar(ra);
-                break;
-                
-                case 3:
-                
-                cadAluno.mostrar();
-                break;
-            }
-        }
+        Aluno a4 = new Aluno("Ze4", 24, "aa4", "dd4", 4, discs);
+        Aluno a5 = new Aluno("Ze5", 25, "aa5", "dd5", 5, discs);
+        cadAluno.inserir(a4);
+        cadAluno.inserir(a5);
+        System.out.println("(inserido dd4, dd5): ");
+        cadAluno.imprimir();
+        cadAluno.remover("dd3");
+        cadAluno.remover("dd5");
+        System.out.println("(removido dd3, dd5): ");
+        cadAluno.imprimir();
+       cadAluno.remover("dd1");
+        cadAluno.remover("dd4");
+        cadAluno.imprimir();
+
     }
 }

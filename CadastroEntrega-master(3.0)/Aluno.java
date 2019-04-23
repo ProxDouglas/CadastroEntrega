@@ -1,60 +1,75 @@
-/**
- * Escreva a descriÃ§Ã£o da classe Aluno aqui.
- * 
- * @author (seu nome) 
- * @version (nÃºmero de versÃ£o ou data)
- */
-public class Aluno extends Pessoa
-{
-    // variÃ¡veis de instÃ¢ncia - substitua o exemplo abaixo pelo seu prÃ³prio
-        private String ra;
-	private int falta;
-	private double nota;
-	private int semestre;
 
-	public Aluno(String nome) {
-		super(nome);
-		setRa(ra);
-		setSemestre(semestre);
-	}
-	
-	protected void setRa(String ra)
-	{
-		this.ra = ra;
-	}
-	
-	protected void setFalta(int falta)
-	{
-		this.falta = falta;
-	}
-	
-	protected void setNota(double nota)
-	{
-		this.nota = nota;
-	}
-	
-	protected void setSemestre(int semestre){
-	       this.semestre = semestre;
-	}
-	 
-	public String getRa()
-	{
-		return this.ra;
-	}
-	
-	public int getFalta()
-	{
-		return this.falta;
-	}
-	
-	public double getNota()
-	{
-		return this.nota;
-	}
-	
-	public int getSemestre()
-	{
-		return this.semestre;
-	}
+/**
+ * @author julio
+ *
+ */
+
+public class Aluno extends Pessoa {
+    private String ra;
+    private int semestre;
+    private Disciplinas disciplinas;
+    
+    public Aluno(String nome, int idade, String rg, String ra, 
+                              int semestre, Disciplinas disciplinas) {
+        super(nome, idade, rg);
+        setRa(ra);
+        setSemestre(semestre);
+        setDisciplinas(disciplinas);
+    }
+
+    public Aluno(String nome, int idade, String rg, String ra, int semestre) {
+        super(nome, idade, rg);
+        setRa(ra);
+        setSemestre(semestre);
+        this.disciplinas = new Disciplinas();
+    }
+    
+    /**
+     * @return the ra
+     */
+    public String getRa() {
+        return this.ra;
+    }
+
+    /**
+     * @param _prontuario the ra to set
+     */
+    public void setRa(String ra) {
+        this.ra = ra;
+    }
+
+    /**
+     * @return the semestre
+     */
+    public int getSemestre() {
+        return semestre;
+    }
+
+    /**
+     * @return disciplinas
+     */
+    public Disciplinas getDisciplinas() {
+        return this.disciplinas;
+    }
+
+    /**
+     * @param _serie the _semestre to set
+     */
+    public void setSemestre(int semestre) {
+        this.semestre = semestre;
+    }
+
+    /**
+     * @return disciplinas
+     */
+    public void setDisciplinas(Disciplinas disciplinas) {
+        this.disciplinas = disciplinas;
+    }
+    
+    public String toString(){
+        return(super.toString() + "\nRA: " + getRa() + "\nSerie: " + 
+                getSemestre() + getDisciplinas().toString());
+    }
+    
 
 }

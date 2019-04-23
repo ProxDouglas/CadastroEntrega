@@ -1,30 +1,20 @@
-
 import javax.swing.JOptionPane;
 
-public class EntradaGui implements Interface
+/**
+ * Escreva a descrição da classe EntradaGui aqui.
+ * 
+ * @author (seu nome) 
+ * @version (número de versão ou data)
+ */
+public class EntradaGui implements IEntrada
 {
+    public void lerDados(){
+        
+        
+    }
+    
     public String lerNome(){
-        String nome = JOptionPane.showInputDialog("Insira o nome ");
+        String nome = JOptionPane.showInputDialog("Forneça o nome: ");
         return nome;
-    }
-
-    public int lerIdade(){
-        int idade = Integer.parseInt(JOptionPane.showInputDialog("Insira a idade"));
-        return idade;
-    }
-
-    public String lerRg(){
-    String rg = JOptionPane.showInputDialog("Insira o rg");
-      return rg;
-    }
-
-    public String lerRa(){
-     String ra = JOptionPane.showInputDialog("Insira o ra");
-     return ra;
-    }
-
-    public int lerSemestre(){
-     int semestre = Integer.parseInt(JOptionPane.showInputDialog("Insira o semestre"));
-     return semestre;
     }
 }

@@ -1,4 +1,13 @@
 
+/**
+ * Armazena o nome de uma disciplina. Inverte nome e limpa espaços extras 
+ * (operaçoes herdados da classe pai).
+ * Retorna o nome da disciplina em formato de bibliografia
+ * 
+ * @author Douglas Cavalcanti, Gabriel Ferreira, Raul Costa 
+ * @version 1.0 2019/04/09
+ */
+
 public class NomeDisciplina extends Texto{
 	// Atributos
 	private String disc;

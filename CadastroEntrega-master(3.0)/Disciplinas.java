@@ -1,43 +1,51 @@
+/**
+ * Write a description of class Disciplinas here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
 public class Disciplinas
 {
-    private NomeDisciplina disc;
-    private String prof;
-    private double nota;
+   
+    public IArmazenador armazen;
     
-    public Disciplinas(String disc){
-        this.disc = new NomeDisciplina(disc);
-        //setDisc(null);
-        setProf(null);
-        setNota(0);
+    public Disciplinas(){
+        this.armazen = new VetDin();//Lista();
     }
-    
-    protected void setDisciplina(String disc)
-    {
-        this.disc.setDisciplina(disc);
+
+    public void inserir(Disciplina disc){
+        this.armazen.inserir(disc);
+        //return true;
     }
-    
-    private void setProf(String prof)
-    {
-        this.prof = prof;
+
+    public boolean remover(String sigla){
+        boolean ret = false;
+        int indice = buscar(sigla);
+        if (indice >= 0){
+            this.armazen.remover(indice);
+            ret = true;
+        } 
+        return ret;
     }
-    
-    private void setNota(double nota)
-    {
-        this.nota = nota;
+
+    private int buscar(String sigla) {
+        int indice = -1;
+        Object vet[] = ((VetDin)this.armazen).getVetor();
+//        Object vet[] = ((Lista)this.armazen).getVetor();
+        if(vet != null){
+            for (int i = 0; i < vet.length; i++){
+                Disciplina a = (Disciplina) vet[i];
+                if (a.getSigla().equals(sigla)){
+                    indice = i;
+                    break;
+                }
+            } 
+        }
+        return indice;
     }
-    
-    public String getDisciplina()
-    {
-        return disc.getDisciplina();
+
+    public String toString(){
+        return armazen.toString();
     }
-    
-    public double getNota()
-    {
-        return this.nota;
-    }
-    
-    public String getProf()
-    {
-        return this.prof;
-    }
+
 }
