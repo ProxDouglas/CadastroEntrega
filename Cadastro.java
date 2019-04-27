@@ -1,28 +1,47 @@
-public class Cadastro
+    public class Cadastro
     {
         private int n;
         public IArmazenador arm;
         public Cadastro(){
            // n = tam;
-            arm = new VetDin();
+           this.arm = new VetDin();
         }
-        public void inserir(Aluno a){
+        public void inserir(Object obj){
          
-            arm.inserir(a);
+            this.arm.inserir(obj);
           
         }
         
         public void deletar(String ra){
-         
-            arm.deletar(ra);
-          
+            int indice = buscar(ra);
+            if(indice >= 0){
+              this.arm.deletar(indice);
+             }
         }
         
+        public  int buscar(String ra) {
+            int indice = -1;
+            //Object obj[] = ((Lista)this.armazen).getTamanho();
+            Object obj[] = ((VetDin)this.arm).getCad();
+            if(obj != null){
+            for (int i = 0; i < obj.length; i++){
+                Aluno a = (Aluno) obj[i];
+                if (a.getRa().equals(ra)){
+                    indice = i;
+                    break;
+                }
+            } 
+          }
+          return indice;
+       }
+    }
+        /*
         public void mostrar(){
          
-            arm.mostrar();
+            this.arm.mostrar();
           
         }
+        //////////////////////////////////////////////
         
         //VetDin vet = new VetDin(n);
         /*
@@ -125,7 +144,3 @@ public class Cadastro
         }
     }
     */
-
-    
-    
-}

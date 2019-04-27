@@ -8,7 +8,7 @@
 
 public interface IArmazenador
 {
-    public void inserir(Aluno a);
-    public void deletar(String ra);
-    public void mostrar();
+    public void inserir(Object obj);
+    public void deletar(int indice);
+    //public void mostrar();
 }

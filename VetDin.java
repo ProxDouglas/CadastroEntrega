@@ -10,14 +10,14 @@
 public class VetDin implements IArmazenador
 {
     int tam;
-    Aluno cad[];
+    Object cad[];
 
     public VetDin(){
         setCad(null);
         setTamanho(0);
     }
     
-    public Aluno[] getCad() {
+    public Object[] getCad() {
         return cad;
     }
     
@@ -25,7 +25,7 @@ public class VetDin implements IArmazenador
         return tam;
     }
     
-    public void setCad(Aluno[] cad) {
+    public void setCad(Object[] cad) {
         this.cad = cad;
     }
     
@@ -33,45 +33,35 @@ public class VetDin implements IArmazenador
         this.tam = tam;
     }
     
-    public void inserir(Aluno a){
+    public void inserir(Object obj){
         int i, verif = 0;
-        String ra;
         if(cad == null){
-            setCad(new Aluno[1]);
-            cad[0] = a;
+            setCad(new Object[1]);
+            cad[0] = obj;
             setTamanho(getTamanho()+1);
         }else{
-            
-            i=0;
-            while(i < cad.length-1 && !a.getRa().equals(cad[i].getRa())){
-                    i = i+1;
-            }
-            if(a.getRa().equals(cad[i].getRa())){
-                verif = 1; 
-            }
-            if(verif == 0){
-                Aluno aux[] = new Aluno[cad.length + 1];
+                Object aux[] = new Object[cad.length + 1];
         
                 for (i = 0; i < cad.length; i++){
                     if (cad[i] != null) {
                         aux[i] = cad[i];
                     }
                 }
-                aux[aux.length - 1] = a;
+                aux[aux.length - 1] = obj;
                 setCad(aux);
                 setTamanho(getTamanho() + 1);
             }
         }
-    }
     
     
-    public void deletar(String  ra){
-        int k = 0, j;
-        int contador = 0;
-        contador = cad.length-1;
-        do{
-            if(ra.equals(cad[k].getRa())){
-                Aluno[] aux = new Aluno[cad.length - 1];
+    
+        public void deletar(int indice){
+            int k = 0, j;
+            int contador = 0;
+            contador = cad.length-1;
+          do{
+            if(getTamanho() > 1){
+                Object[] aux = new Object[cad.length - 1];
                 setTamanho(getTamanho()-1);
                 for(j = k; j < cad.length-1; j++){
                     if (cad[j] != null) {
@@ -88,9 +78,10 @@ public class VetDin implements IArmazenador
                 k = contador+1;
             }
             k++;
-        }while(k < contador);
+          }while(k < contador);
     }
     
+    /*
     public void mostrar(){
         int j =0;
         if(cad.length != 0){
@@ -119,4 +110,5 @@ public class VetDin implements IArmazenador
             System.out.println("Nenhum contato cadastrado!\n");
         }
     }
+    */
 }

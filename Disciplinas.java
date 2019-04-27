@@ -1,43 +1,37 @@
 public class Disciplinas
-{
-    private NomeDisciplina disc;
-    private NomeProfessor prof;
-    private double nota;
-    
-    public Disciplinas(String disc, String prof){
-        this.disc = new NomeDisciplina(disc);
-        this.prof = new NomeProfessor(prof);
-        //setProf(null);
-        setNota(0);
-    }
-    
-    public void setDisciplina(String disc)
     {
-        this.disc.setDisciplina(disc);
+        private int n;
+        public IArmazenador arm;
+        public Disciplinas(){
+           // n = tam;
+           this.arm = new VetDin();
+        }
+        public void inserir(Object obj){
+         
+            this.arm.inserir(obj);
+          
+        }
+        
+        public void deletar(String sigla){
+            int indice = buscar(sigla);
+            if(indice >= 0){
+              this.arm.deletar(indice);
+             }
+        }
+        
+        public  int buscar(String sigla) {
+            int indice = -1;
+            //Object obj[] = ((Lista)this.armazen).getTamanho();
+            Object obj[] = ((VetDin)this.arm).getCad();
+            if(obj != null){
+            for (int i = 0; i < obj.length; i++){
+                Disciplina disc = (Disciplina) obj[i];
+                if (disc.getSigla().equals(sigla)){
+                    indice = i;
+                    break;
+                }
+            } 
+          }
+          return indice;
+       }
     }
-    
-    public void setProf(String prof)
-    {
-        this.prof = new NomeProfessor(prof);
-    }
-    
-    public void setNota(double nota)
-    {
-        this.nota = nota;
-    }
-    
-    public String getDisciplina()
-    {
-        return disc.getDisciplina();
-    }
-    
-    public double getNota()
-    {
-        return this.nota;
-    }
-    
-    public String getProf()
-    {
-        return prof.getProfessor();
-    }
-}
