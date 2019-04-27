@@ -20,6 +20,24 @@ public class Disciplinas
         }
         
         public  int buscar(String sigla) {
+          int indice = -1;
+          int i = 0;
+          //Object obj[] = ((Lista)this.armazen).getTamanho();
+          Object obj[] = ((VetDin)this.arm).getCad();
+          Disciplina disc = (Disciplina) obj[0];
+          if(obj != null){
+            while(!disc.getSigla().equals(sigla) && i < obj.length){
+                disc = (Disciplina) obj[i+1];
+                i++;
+            }
+            if (disc.getSigla().equals(sigla)){
+                indice = i;
+            }
+          }
+          return indice;
+       }
+        
+        /*public  int buscar(String sigla) {
             int indice = -1;
             //Object obj[] = ((Lista)this.armazen).getTamanho();
             Object obj[] = ((VetDin)this.arm).getCad();
@@ -33,5 +51,5 @@ public class Disciplinas
             } 
           }
           return indice;
-       }
+       }*/
     }

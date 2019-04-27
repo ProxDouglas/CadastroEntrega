@@ -41,7 +41,7 @@ public class EntradaConsole implements Interface
         return qtd;
     }
     
-    public String lerDisciplinas(){
+    public String lerDisciplina(){
         System.out.println("Insira a Disciplina ");
         String disc = scan.nextLine();
         return disc;
@@ -57,5 +57,11 @@ public class EntradaConsole implements Interface
         System.out.println("Insira a nota");
         int nota = scan.nextInt();
         return nota;
+    }
+    
+    public String lerSigla(){
+        System.out.println("Insira a Sigla ");
+        String sigla = scan.nextLine();
+        return sigla;
     }
 }

@@ -56,7 +56,7 @@ public class EntradaGui implements Interface
         return tam;
     }
 
-    public String lerDisciplinas(){
+    public String lerDisciplina(){
         String disc = JOptionPane.showInputDialog("Insira a Disciplina");
         return disc;
     }
@@ -69,6 +69,11 @@ public class EntradaGui implements Interface
     public int lerNota(){
         int nota = Integer.parseInt(JOptionPane.showInputDialog("Insira a nota"));
         return nota;
+    }
+    
+    public String lerSigla(){
+        String sigla = JOptionPane.showInputDialog("Insira a Sigla");
+        return sigla;
     }
 
 }

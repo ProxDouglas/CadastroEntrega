@@ -20,6 +20,24 @@
         }
         
         public  int buscar(String ra) {
+          int indice = -1;
+          int i = 0;
+          //Object obj[] = ((Lista)this.armazen).getTamanho();
+          Object obj[] = ((VetDin)this.arm).getCad();
+          Aluno a = (Aluno) obj[0];
+          if(obj != null){
+            while(!a.getRa().equals(ra) && i < obj.length){
+                a = (Aluno) obj[i+1];
+                i++;
+            }
+            if (a.getRa().equals(ra)){
+                indice = i;
+            }
+          }
+          return indice;
+       }
+        
+        /*public  int buscar(String ra) {
             int indice = -1;
             //Object obj[] = ((Lista)this.armazen).getTamanho();
             Object obj[] = ((VetDin)this.arm).getCad();
@@ -33,7 +51,10 @@
             } 
           }
           return indice;
-       }
+       }*/
+       
+       
+    
     }
         /*
         public void mostrar(){

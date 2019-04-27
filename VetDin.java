@@ -63,7 +63,7 @@ public class VetDin implements IArmazenador
             if(getTamanho() > 1){
                 Object[] aux = new Object[cad.length - 1];
                 setTamanho(getTamanho()-1);
-                for(j = k; j < cad.length-1; j++){
+                for(j = indice; j < cad.length-1; j++){
                     if (cad[j] != null) {
                         cad[j] = cad[j+1];
                     }
