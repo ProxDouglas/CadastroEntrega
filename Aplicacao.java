@@ -23,20 +23,22 @@ class Aplicacao
             
             switch(opcao){
                 case 1:
-                Aluno a = new Aluno(ent.lerNome());
                 
-                a.setIdade(ent.lerIdade());
-                a.setId(ent.lerRg());
-                a.setRa(ent.lerRa());
-                a.setSemestre(ent.lerSemestre());
-                cadAluno.arm.inserir(a);
+                if(opcao2 == 1){
+                    Aluno a = new Aluno(ent.lerNome());
                 
+                    a.setIdade(ent.lerIdade());
+                    a.setId(ent.lerRg());
+                    a.setRa(ent.lerRa());
+                    a.setSemestre(ent.lerSemestre());
+                    cadAluno.arm.inserir(a);
+                }
                 
-                do{
-                    opcao2 = 0;
-                    System.out.println("1 - Inserir Disciplina ");
-                    System.out.println("2 - Parar cadastro ");
-                    opcao2 = scan.nextInt();
+                    do{
+                        opcao2 = 0;
+                        System.out.println("1 - Inserir Disciplina ");
+                        System.out.println("2 - Parar cadastro ");
+                        opcao2 = scan.nextInt();
                     if(opcao2 == 1){
                         aDisc = ent.lerDisciplina();
                         bDisc = ent.lerProfessor();

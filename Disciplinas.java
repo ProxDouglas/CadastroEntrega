@@ -36,6 +36,29 @@ public class Disciplinas
           }
           return indice;
        }
+       
+       
+       public void mostrar(Object[] obj){
+        int j =0;
+        int contador = obj.length;
+        if(contador > 0){
+            for(int i = 0; i < contador; i++){
+                
+                Disciplina b = (Disciplina) obj[i];
+                //System.out.println("Quantidade de Disciplinas: "+ b.getDisc().length + "\n");
+
+                System.out.println("Disciplina: "+ b.getDisciplina() + "\n");
+                System.out.println("Professor: "+ b.getProf() + "\n");
+                //System.out.println("Nota: "+ b.getNota() + "\n");
+                System.out.println("Sigla: "+ b.getSigla() + "\n");
+                System.out.println("\n---------------------------------\n");
+                j++;
+            }
+        }else{
+              System.out.println("Nenhum contato cadastrado!\n");
+            }
+        }
+    
         
         /*public  int buscar(String sigla) {
             int indice = -1;

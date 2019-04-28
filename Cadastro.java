@@ -36,6 +36,26 @@
           }
           return indice;
        }
+       
+       public void mostrar(Object[] obj){
+        int j =0;
+        int contador = obj.length;
+        if(obj.length != 0){
+            for(int i = 0; i < contador; i++){
+                Aluno a = (Aluno) obj[i];
+                System.out.println("Nome: "+ a.getNome() + "\n");
+                System.out.println("Idade: "+ a.getIdade() + "\n");
+                System.out.println("RG: "+ a.getId() + "\n");
+                System.out.println("RA: "+ a.getRa() + "\n");
+                System.out.println("Semestre: "+ a.getSemestre() + "\n");
+                
+            }
+        }
+    }
+    
+       
+       
+       
         
         /*public  int buscar(String ra) {
             int indice = -1;
