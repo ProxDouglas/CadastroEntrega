@@ -9,8 +9,8 @@ public class Lista{
     }
     
     
-    public void remover(String ra) {
-        
+    public void deletar(Object obj) {
+        list.remove(obj);
     }
 
     
