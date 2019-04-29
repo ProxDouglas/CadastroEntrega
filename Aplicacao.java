@@ -3,7 +3,7 @@ import java.util.Scanner;
 class Aplicacao
 {
     public static void main(String args[]){
-        int opcao = 0, opcao2 =0;
+        int opcao = 0, opcao2 =0, escolha = 0;
         int i, qtdisc;
         String aDisc, bDisc, cDisc;
         
@@ -23,31 +23,44 @@ class Aplicacao
             
             switch(opcao){
                 case 1:
+                System.out.println("1 - Cadastro Aluno  ");
+                System.out.println("2 - Cadastrar Disciplina\n");
+                opcao2 = scan.nextInt();
                 
                 if(opcao2 == 1){
-                    Aluno a = new Aluno(ent.lerNome());
+                    do{
+                        
+                        Aluno a = new Aluno(ent.lerNome());
                 
-                    a.setIdade(ent.lerIdade());
-                    a.setId(ent.lerRg());
-                    a.setRa(ent.lerRa());
-                    a.setSemestre(ent.lerSemestre());
-                    cadAluno.arm.inserir(a);
+                        a.setIdade(ent.lerIdade());
+                        a.setId(ent.lerRg());
+                        a.setRa(ent.lerRa());
+                        a.setSemestre(ent.lerSemestre());
+                        cadAluno.arm.inserir(a);
+                        
+                        System.out.println("1 - Inserir Aluno ");
+                        System.out.println("2 - Parar cadastro \n");
+                        escolha = ent.lerInt();
+                    }while(escolha != 2);
+                    escolha = 0;
                 }
                 
+                if(opcao2 == 2){
                     do{
-                        opcao2 = 0;
-                        System.out.println("1 - Inserir Disciplina ");
-                        System.out.println("2 - Parar cadastro ");
-                        opcao2 = scan.nextInt();
-                    if(opcao2 == 1){
                         aDisc = ent.lerDisciplina();
                         bDisc = ent.lerProfessor();
                         cDisc = ent.lerSigla();
                  
                         Disciplina disc = new Disciplina(aDisc, bDisc, cDisc);
                         cadDisc.arm.inserir(disc);
-                    }
-                }while(opcao2 != 2);
+                        
+                        System.out.println("1 - Inserir Disciplina ");
+                        System.out.println("2 - Parar cadastro ");
+                        escolha = ent.lerInt();
+                        }while(escolha != 2);
+                        escolha = 0;
+                }
+                
                 
                 break;
 
@@ -68,11 +81,12 @@ class Aplicacao
                 System.out.println("1 - Mostrar Aluno ");
                 System.out.println("2 - Mostrar Disciplina ");
                 
+                opcao2 = scan.nextInt();
                 if(opcao2 == 1){
-                   //cadAluno.arm.mostrarAluno();
+                   cadAluno.arm.mostrarAluno();
                     
                 }else if(opcao2 == 2)
-                    //cadDisc.arm.mostrarDisc();
+                    cadDisc.arm.mostrarDisc();
                 
                 break;
             }
