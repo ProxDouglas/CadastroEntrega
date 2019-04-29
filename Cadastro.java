@@ -37,7 +37,7 @@
           return indice;
        }
        
-       public void mostrar(Object[] obj){
+       /*public void mostrar(Object[] obj){
         int j =0;
         int contador = obj.length;
         if(obj.length != 0){
@@ -51,7 +51,8 @@
                 
             }
         }
-    }
+    }*/
+}
     
        
        
@@ -75,7 +76,7 @@
        
        
     
-    }
+    
         /*
         public void mostrar(){
          

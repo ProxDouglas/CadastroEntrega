@@ -38,7 +38,7 @@ public class Disciplinas
        }
        
        
-       public void mostrar(Object[] obj){
+       /*public void mostrar(Object[] obj){
         int j =0;
         int contador = obj.length;
         if(contador > 0){
@@ -57,7 +57,7 @@ public class Disciplinas
         }else{
               System.out.println("Nenhum contato cadastrado!\n");
             }
-        }
+        }*/
     
         
         /*public  int buscar(String sigla) {

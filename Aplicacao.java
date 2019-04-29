@@ -65,8 +65,15 @@ class Aplicacao
                 break;
                 
                 case 3:
+                System.out.println("1 - Mostrar Aluno ");
+                System.out.println("2 - Mostrar Disciplina ");
                 
-                //cadAluno.mostrar();
+                if(opcao2 == 1){
+                   //cadAluno.arm.mostrarAluno();
+                    
+                }else if(opcao2 == 2)
+                    //cadDisc.arm.mostrarDisc();
+                
                 break;
             }
         }
