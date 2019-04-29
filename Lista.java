@@ -12,14 +12,8 @@ public class Lista{
     public void deletar(Object obj) {
         list.remove(obj);
     }
-
     
-
-     public int buscar(String obj){
-        
-     }
- 
-     public List<Lista> imprimir() {
+    public List<Lista> imprimir() {
         return new ArrayList<Lista>(list);
-     }
+    }
 }
