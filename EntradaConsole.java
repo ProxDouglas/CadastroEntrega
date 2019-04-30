@@ -35,8 +35,8 @@ public class EntradaConsole implements Interface
         return semestre;
      }
      
-    public int lerQTDisciplinas(){
-        System.out.println("Insira o quantas disciplinas ");
+    public int lerInt(){
+        System.out.println("Digite a escolha");
         int qtd = scan.nextInt();
         return qtd;
     }

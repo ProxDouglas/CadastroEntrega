@@ -51,8 +51,17 @@ public class EntradaGui implements Interface
         
     }
 
-    public int lerQTDisciplinas(){
-        int tam = Integer.parseInt(JOptionPane.showInputDialog("Insira quantas disciplinas"));
+    public int lerInt(){
+        int tam =0;
+        boolean excep = false;
+        try{
+            tam = Integer.parseInt(JOptionPane.showInputDialog("Digite a escolha"));
+            excep = true;
+        }catch(NumberFormatException e){
+            System.out.println("\nCaractere invalido\n");
+            System.out.println("Tente novamente: \n");
+            excep = false;
+        }
         return tam;
     }
 

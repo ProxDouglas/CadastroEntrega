@@ -13,9 +13,10 @@ public interface Interface
     public  String lerRg();
     public  String lerRa();
     public  int lerSemestre();
-    public int lerQTDisciplinas();
+    
     public String lerDisciplina();
     public String lerProfessor();
     public int lerNota();
     public String lerSigla();
+    public int lerInt();
 }
