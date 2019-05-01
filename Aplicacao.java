@@ -10,15 +10,15 @@ class Aplicacao
         Scanner scan = new Scanner(System.in);
         
         /*
-         *      A troca de cadAluno por cadAlunoArreyList faz 
+         *      A troca de cadAluno por cadAlunoArrayList faz 
          *  a troca de utilização do VetDin para o tipo Lista
          *  que eh o arrayList
          */
         
-        Cadastro cadAluno = new Cadastro();
-        Disciplinas cadDisc = new Disciplinas();
-        //CadastroArreyList cadAluno = new CadastroArreyList();
-        //DisciplinasArreyList cadDisc = new DisciplinasArreyList();
+        //Cadastro cadAluno = new Cadastro();
+        //Disciplinas cadDisc = new Disciplinas();
+        CadastroArrayList cadAluno = new CadastroArrayList();
+        DisciplinasArrayList cadDisc = new DisciplinasArrayList();
 
         while(opcao != 4){
             System.out.println("Portal do aluno");
@@ -91,10 +91,10 @@ class Aplicacao
                 
                 opcao2 = scan.nextInt();
                 if(opcao2 == 1){
-                   cadAluno.arm.mostrarAluno();
+                   //cadAluno.mostrarAluno();
                     
                 }else if(opcao2 == 2)
-                    cadDisc.arm.mostrarDisc();
+                    cadDisc.mostrar();
                 
                 break;
             }
