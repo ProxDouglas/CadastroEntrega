@@ -1,8 +1,7 @@
     public class Cadastro
     {
-        private int n;
-        public IArmazenador arm;
-        public Lista list;
+      public IArmazenador arm;
+      
         
         //VetDin
         public Cadastro(){
@@ -11,28 +10,25 @@
         }
         
         public void inserir(Object obj){
-            this.list.inserir((Lista)obj);//ArrayList
-            //this.arm.inserir(obj);//VetDin
+            //this.list.inserir((Lista)obj);//ArrayList
+            this.arm.inserir(obj);//VetDin
           
         }
         //VetDin
         public void deletar(String ra){
             int indice;
-            /*indice = buscar(ra);
+            
+            indice = buscar(ra);
             if(indice >= 0){
-              this.arm.deletar(indice);
-             }*/
-             indice = buscarArrayList(ra);
-             if(indice >= 0){
-              list.getLista().remove(indice);
-          }
+                this.arm.deletar(indice);//VetDin
+             }
         }
         //VetDin
         public  int buscar(String ra) {
           int indice = -1;
           int i = 0;
-          Object obj[] = list.getLista().toArray();//para ArrayList
-          //Object obj[] = ((VetDin)this.arm).getCad();//VetDin
+          //Object obj[] = list.getLista().toArray();//para ArrayList
+          Object obj[] = ((VetDin)this.arm).getCad();//VetDin
           Aluno a = (Aluno) obj[0];
           if(obj != null){
             while(!a.getRa().equals(ra) && i < obj.length){
@@ -43,13 +39,6 @@
                 indice = i;
             }
           }
-          return indice;
-       }
-       
-       public  int buscarArrayList(String ra) {
-          int indice = -1;
-          Object obj = (Lista)list.getLista().clone();//((Lista)this.arm).getTamanho();
-          indice = list.getLista().indexOf(ra);
           return indice;
        }
        

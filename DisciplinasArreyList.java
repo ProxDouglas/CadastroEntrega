@@ -1,29 +1,42 @@
-public class Disciplinas
+public class DisciplinasArreyList
     {
-        public IArmazenador arm;
-        public Disciplinas(){
+        public Lista arm;
+        public DisciplinasArreyList(){
            // n = tam;
-           this.arm = new VetDin();
+           this.arm = new Lista();
         }
+        
         public void inserir(Object obj){
-            
             this.arm.inserir(obj);
+            //this.arm.inserir(obj);
         }
         
         public void deletar(String sigla){
             int indice ;
-            indice = buscar(sigla);
-            if(indice >= 0){
-              this.arm.deletar(indice);
-             }
-             
+             indice = buscar(sigla);
+             if(indice >= 0){
+              arm.getLista().remove(indice);
+          }
         }
         
-        public  int buscar(String sigla) {
+        /*
+         *  Existem dois metodos possiveis de busca abaixo um 
+         *  que usa a função de busca da biblioteca e outro que 
+         *  eh a propria função de busca.
+         */
+        
+        
+       public  int buscar(String sigla) {
+          int indice = -1;
+          indice = arm.getLista().indexOf(sigla);
+          return indice;
+       }
+       
+       /*public  int buscar(String sigla) {
           int indice = -1; 
           int i = 0;
-          //Object obj[] = list.getLista().toArray();
-          Object obj[] = ((VetDin)this.arm).getCad();
+          Object obj[] = arm.getLista().toArray();
+          
           Disciplina disc = (Disciplina) obj[0];
           if(obj != null){
             while(!disc.getSigla().equals(sigla) && i < obj.length){
@@ -35,8 +48,7 @@ public class Disciplinas
             }
           }
           return indice;
-       }
-    
+       }*/
     }       
        
        /*public void mostrar(Object[] obj){

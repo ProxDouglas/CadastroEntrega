@@ -6,11 +6,19 @@ class Aplicacao
         int opcao = 0, opcao2 =0, escolha = 0;
         int i, qtdisc;
         String aDisc, bDisc, cDisc;
-        
         Interface ent = new EntradaGui();
+        Scanner scan = new Scanner(System.in);
+        
+        /*
+         *      A troca de cadAluno por cadAlunoArreyList faz 
+         *  a troca de utilização do VetDin para o tipo Lista
+         *  que eh o arrayList
+         */
+        
         Cadastro cadAluno = new Cadastro();
         Disciplinas cadDisc = new Disciplinas();
-        Scanner scan = new Scanner(System.in);
+        //CadastroArreyList cadAluno = new CadastroArreyList();
+        //DisciplinasArreyList cadDisc = new DisciplinasArreyList();
 
         while(opcao != 4){
             System.out.println("Portal do aluno");
