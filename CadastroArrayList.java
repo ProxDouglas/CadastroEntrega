@@ -8,11 +8,13 @@
 public class CadastroArrayList
 {
         public Lista arm;
+        
         public CadastroArrayList(){
            this.arm = new Lista();
+           arm.getLista().clear();
         }
         
-        public void inserir(Object obj){
+        public void inserir(Aluno obj){
             this.arm.inserir(obj);
             
         }
@@ -57,10 +59,11 @@ public class CadastroArrayList
        }
        
        
-       public void mostrar(Object[] obj){
-        int j =0;
+       public void mostrar(){
+        Object obj[] = arm.getLista().toArray();
         int contador = obj.length;
         if(obj.length != 0){
+            System.out.println("\n---------------------------------\n");
             for(int i = 0; i < contador; i++){
                 Aluno a = (Aluno) obj[i];
                 System.out.println("Nome: "+ a.getNome() + "\n");
@@ -68,6 +71,7 @@ public class CadastroArrayList
                 System.out.println("RG: "+ a.getId() + "\n");
                 System.out.println("RA: "+ a.getRa() + "\n");
                 System.out.println("Semestre: "+ a.getSemestre() + "\n");
+                System.out.println("\n---------------------------------\n");
                 
             }
         }

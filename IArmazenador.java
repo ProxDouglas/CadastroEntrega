@@ -10,7 +10,7 @@ public interface IArmazenador
 {
     public void inserir(Object obj);
     public void deletar(int indice);
-    public void mostrarAluno();
-    public void mostrarDisc();
+    //public void mostrarAluno();
+    //public void mostrarDisc();
     //public void mostrar();
 }

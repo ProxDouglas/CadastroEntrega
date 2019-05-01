@@ -42,10 +42,10 @@
           return indice;
        }
        
-       /*public void mostrar(Object[] obj){
-        int j =0;
-        int contador = obj.length;
-        if(obj.length != 0){
+       public void mostrarAluno(){
+        Object obj[] = ((VetDin)this.arm).getCad();
+        int contador = ((VetDin)this.arm).getCad().length;
+        if(contador > 0){
             for(int i = 0; i < contador; i++){
                 Aluno a = (Aluno) obj[i];
                 System.out.println("Nome: "+ a.getNome() + "\n");
@@ -56,5 +56,5 @@
                 
             }
         }
-    }*/
+    }
 }

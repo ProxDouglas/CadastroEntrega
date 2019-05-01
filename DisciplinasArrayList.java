@@ -53,10 +53,10 @@ public class DisciplinasArrayList
        
        
         public void mostrar(){
-        int j =0, contador=0;
         Object obj[] = arm.getLista().toArray();
-        contador = obj.length;
+        int contador = obj.length;
         if(contador > 0){
+            System.out.println("\n---------------------------------\n");
             for(int i = 0; i < contador; i++){
                 
                 Disciplina b = (Disciplina) obj[i];
@@ -67,7 +67,7 @@ public class DisciplinasArrayList
                 //System.out.println("Nota: "+ b.getNota() + "\n");
                 System.out.println("Sigla: "+ b.getSigla() + "\n");
                 System.out.println("\n---------------------------------\n");
-                j++;
+                
             }
         }else{
               System.out.println("Nenhum contato cadastrado!\n");

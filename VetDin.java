@@ -79,41 +79,9 @@ public class VetDin implements IArmazenador
         }while(k < contador);
     }
     
-    public void mostrarAluno(){
-        int j =0;
-        int contador = this.cad.length;
-        if(this.cad.length != 0){
-            for(int i = 0; i < contador; i++){
-                Aluno a = (Aluno) this.cad[i];
-                System.out.println("Nome: "+ a.getNome() + "\n");
-                System.out.println("Idade: "+ a.getIdade() + "\n");
-                System.out.println("RG: "+ a.getId() + "\n");
-                System.out.println("RA: "+ a.getRa() + "\n");
-                System.out.println("Semestre: "+ a.getSemestre() + "\n");
-                
-            }
-        }
-    }
     
-    public void mostrarDisc(){
-        int j =0;
-        int contador = getCad().length;
-        if(contador > 0){
-            for(int i = 0; i < contador; i++){
-                Disciplina b = (Disciplina) this.cad[i];
-                //System.out.println("Quantidade de Disciplinas: "+ b.getDisc().length + "\n");
-
-                System.out.println("Disciplina: "+ b.getDisciplina() + "\n");
-                System.out.println("Professor: "+ b.getProf() + "\n");
-                //System.out.println("Nota: "+ b.getNota() + "\n");
-                System.out.println("Sigla: "+ b.getSigla() + "\n");
-                System.out.println("\n---------------------------------\n");
-                j++;
-            }
-        }else{
-              System.out.println("Nenhum contato cadastrado!\n");
-            }
-        }
+    
+    
     
     //public Object retornar(){
     //}

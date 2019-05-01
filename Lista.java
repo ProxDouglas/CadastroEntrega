@@ -1,16 +1,17 @@
 import java.util.*;
 
-public class Lista{
+
+public class Lista {
     int tam;
-    ArrayList<Lista> list = new ArrayList<>();
+    ArrayList<Object> list ;
     public Lista(){
         setTamanho(0);
+        list = new ArrayList<>();
     }
     
-    public void inserir(Object obj){
+    public void inserir(Object item){
         boolean verif =false;
-        Lista l = (Lista)obj;
-        verif = list.add(l);
+        verif = list.add(item);
         if(verif)setTamanho(list.size()+1);
         
     }
@@ -28,7 +29,7 @@ public class Lista{
     
     /*
     public List<Lista> mostrar() {
-        return new ArrayList<Lista>(list);
+        return new ArrayList<Object>(list);
     }
     */
     

@@ -44,7 +44,7 @@ class Aplicacao
                         a.setId(ent.lerRg());
                         a.setRa(ent.lerRa());
                         a.setSemestre(ent.lerSemestre());
-                        cadAluno.arm.inserir(a);
+                        cadAluno.inserir(a);
                         
                         System.out.println("1 - Inserir Aluno ");
                         System.out.println("2 - Parar cadastro \n");
@@ -60,7 +60,7 @@ class Aplicacao
                         cDisc = ent.lerSigla();
                  
                         Disciplina disc = new Disciplina(aDisc, bDisc, cDisc);
-                        cadDisc.arm.inserir(disc);
+                        cadDisc.inserir(disc);
                         
                         System.out.println("1 - Inserir Disciplina ");
                         System.out.println("2 - Parar cadastro ");
@@ -91,7 +91,7 @@ class Aplicacao
                 
                 opcao2 = scan.nextInt();
                 if(opcao2 == 1){
-                   //cadAluno.mostrarAluno();
+                   cadAluno.mostrar();
                     
                 }else if(opcao2 == 2)
                     cadDisc.mostrar();
