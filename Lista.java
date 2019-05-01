@@ -7,9 +7,11 @@ public class Lista{
         setTamanho(0);
     }
     
-    public void inserir(Lista obj){
-        list.add(obj);
-        setTamanho(list.size()+1);
+    public boolean inserir(Object obj){
+        boolean verif =false;
+        verif = list.add((Lista)obj);
+        if(verif)setTamanho(list.size()+1);
+        return verif;
     }
     
     
