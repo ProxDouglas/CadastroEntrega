@@ -1,0 +1,8 @@
+#BlueJ class context
+comment0.target=IArmazenador
+comment0.text=\r\n\ Escreva\ a\ descri\u00E7\u00E3o\ da\ interface\ ICadastro\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (n\u00FAmero\ da\ vers\u00E3o\ ou\ data)\r\n
+comment1.params=obj
+comment1.target=void\ inserir(java.lang.Object)
+comment2.params=indice
+comment2.target=void\ deletar(int)
+numComments=3

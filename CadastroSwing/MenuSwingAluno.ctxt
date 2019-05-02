@@ -1,0 +1,23 @@
+#BlueJ class context
+comment0.target=MenuSwingAluno
+comment1.params=titulo
+comment1.target=MenuSwingAluno(java.lang.String)
+comment10.params=AlunoRa
+comment10.target=void\ setRa(java.lang.String)
+comment2.params=ae
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=java.lang.String\ getRa()
+comment4.params=
+comment4.target=java.lang.String\ getNome()
+comment5.params=
+comment5.target=int\ getIdade()
+comment6.params=
+comment6.target=java.lang.String\ getRg()
+comment7.params=AlunoNome
+comment7.target=void\ setNome(java.lang.String)
+comment8.params=AlunoIdade
+comment8.target=void\ setIdade(int)
+comment9.params=AlunoRg
+comment9.target=void\ setRg(java.lang.String)
+numComments=11

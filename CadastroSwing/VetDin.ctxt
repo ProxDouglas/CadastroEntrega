@@ -1,0 +1,18 @@
+#BlueJ class context
+comment0.target=VetDin
+comment0.text=\r\n\ Escreva\ a\ descri\u00E7\u00E3o\ da\ classe\ VetDin\ aqui.\r\n\ \r\n\ @author\ (seu\ nome)\ \r\n\ @version\ (n\u00FAmero\ de\ vers\u00E3o\ ou\ data)\r\n
+comment1.params=
+comment1.target=VetDin()
+comment2.params=
+comment2.target=java.lang.Object[]\ getCad()
+comment3.params=
+comment3.target=int\ getTamanho()
+comment4.params=cad
+comment4.target=void\ setCad(java.lang.Object[])
+comment5.params=tam
+comment5.target=void\ setTamanho(int)
+comment6.params=obj
+comment6.target=void\ inserir(java.lang.Object)
+comment7.params=indice
+comment7.target=void\ deletar(int)
+numComments=8

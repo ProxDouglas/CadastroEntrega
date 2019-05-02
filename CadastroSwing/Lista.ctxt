@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Lista
+comment1.params=
+comment1.target=Lista()
+comment2.params=item
+comment2.target=void\ inserir(java.lang.Object)
+comment3.params=indice
+comment3.target=void\ deletar(int)
+comment4.params=
+comment4.target=java.util.ArrayList\ getLista()
+comment5.params=i
+comment5.target=void\ setTamanho(int)
+comment5.text=\r\n\ \ \ \ public\ List<Lista>\ mostrar()\ {\r\n\ \ \ \ \ \ \ \ return\ new\ ArrayList<Object>(list);\r\n\ \ \ \ }\r\n
+comment6.params=
+comment6.target=int\ getTamanho()
+numComments=7

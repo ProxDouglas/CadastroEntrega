@@ -1,0 +1,3 @@
+Cancel -> lerNome(try-catch)
+qntDisc -> Tipo int(Usar o try-catch)
+Ra -> indice em remover na lista
