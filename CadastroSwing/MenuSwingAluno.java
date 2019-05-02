@@ -27,6 +27,7 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     public String alunoRa;
     public int alunoSemestre;
     public boolean closed = false;
+    public boolean closedSair = false;
     
     MenuSwingAluno(String titulo)
     {
@@ -39,6 +40,7 @@ public class MenuSwingAluno extends JFrame implements ActionListener
         setRa(alunoRa);
         setSemestre(alunoSemestre);
         setClosed(closed);
+        
         
         Container cp = getContentPane();
         cp.setLayout(new GridLayout(6,2));
@@ -83,8 +85,8 @@ public class MenuSwingAluno extends JFrame implements ActionListener
         cadastro.setToolTipText("Cadastra o Aluno");
         
         cp.add(sair = new JButton("sair"));
-        cadastro.addActionListener(this);
-        cadastro.setToolTipText("Sair");
+        sair.addActionListener(this);
+        sair.setToolTipText("Sair");
         //pack();
 
     }
@@ -93,7 +95,9 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent ae)
     {
         if(ae.getActionCommand().equals("sair")){
+            setSair(true);
             CloseFrame();
+            
         }else{
                 
                         
@@ -146,7 +150,7 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     
     protected void setSemestre(int alunoSemestre)
     {
-        this.alunoSemestre = alunoSemestre;
+        this.alunoIdade = alunoSemestre;
     }
     
     protected void setRg(String alunoRg)
@@ -158,14 +162,24 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     {
         this.alunoRa = alunoRa;
     }
+    
     protected void setClosed(boolean closed){
         this.closed = closed;
     }
+    
     public boolean getClosed(){
         return this.closed;
     }
     
     public void CloseFrame(){
         super.dispose();
+    }
+    
+    protected void setSair(boolean closedSair){
+        this.closedSair = closedSair;
+    }
+    
+    public boolean getSair(){
+        return this.closedSair;
     }
 }

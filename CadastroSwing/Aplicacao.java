@@ -43,7 +43,7 @@ class Aplicacao
                         menu.setVisible(true);
                         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
                         do{
-                        if(menu.getClosed() == true){
+                        if(menu.getClosed() == true ){
                             Aluno a = new Aluno(menu.getNome());
                         
                             a.setIdade(menu.getIdade());
@@ -52,7 +52,7 @@ class Aplicacao
                             a.setSemestre(menu.getSemestre());
                             cadAluno.inserir(a);
                         }
-                    }while(menu.getClosed() == false);
+                    }while(menu.getClosed() == false && menu.getSair() == false);
                        //}while(idade == 0);
                         //System.out.println("1 - Inserir Aluno ");
                         //System.out.println("2 - Parar cadastro \n");
@@ -74,7 +74,7 @@ class Aplicacao
                                 Disciplina disc = new Disciplina(aDisc, bDisc, cDisc);
                                 cadDisc.inserir(disc);
                             }
-                        }while(menu.getClosed() == false);
+                        }while(menu.getClosed() == false && menu.getSair() == false);
                         //System.out.println("1 - Inserir Disciplina ");
                         //System.out.println("2 - Parar cadastro ");
                         //escolha = ent.lerInt();

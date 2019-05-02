@@ -24,6 +24,7 @@ public class MenuSwingDisc extends JFrame implements ActionListener
     public String discProf;
     public int alunoSemestre;
     public boolean closed = false;
+    public boolean closedSair = false;
     
     MenuSwingDisc(String titulo)
     {
@@ -74,6 +75,7 @@ public class MenuSwingDisc extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent ae)
     {
         if(ae.getActionCommand().equals("sair")){
+            setSair(true);
             CloseFrame();
         }else{
                 
@@ -129,5 +131,13 @@ public class MenuSwingDisc extends JFrame implements ActionListener
     
     public void CloseFrame(){
         super.dispose();
+    }
+    
+    protected void setSair(boolean closedSair){
+        this.closedSair = closedSair;
+    }
+    
+    public boolean getSair(){
+        return this.closedSair;
     }
 }
