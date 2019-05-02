@@ -42,7 +42,7 @@
           return indice;
        }
        
-       public void mostrarAluno(){
+       public void mostrar(){
         Object obj[] = ((VetDin)this.arm).getCad();
         int contador = ((VetDin)this.arm).getCad().length;
         if(contador > 0){

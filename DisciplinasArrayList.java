@@ -14,25 +14,14 @@ public class DisciplinasArrayList
         public void deletar(String sigla){
             int indice ;
              indice = buscar(sigla);
-             if(indice >= 0){
-              arm.getLista().remove(indice);
+             if(indice >= 0 && arm.getTamanho() > 0){
+              arm.deletar(indice);
           }
         }
         
-        /*
-         *  Existem dois metodos possiveis de busca abaixo um 
-         *  que usa a função de busca da biblioteca e outro que 
-         *  eh a propria função de busca.
-         */
-        
-        
-       public  int buscar(String sigla) {
-          int indice = -1;
-          indice = arm.getLista().indexOf(sigla);
-          return indice;
-       }
        
-       /*public  int buscar(String sigla) {
+       
+       public  int buscar(String sigla) {
           int indice = -1; 
           int i = 0;
           Object obj[] = arm.getLista().toArray();
@@ -48,7 +37,7 @@ public class DisciplinasArrayList
             }
           }
           return indice;
-       }*/
+       }
        
        
        
@@ -74,28 +63,13 @@ public class DisciplinasArrayList
             }
         }
        
-    }       
-       
-       /*public void mostrar(Object[] obj){
-        int j =0;
-        int contador = obj.length;
-        if(contador > 0){
-            for(int i = 0; i < contador; i++){
-                
-                Disciplina b = (Disciplina) obj[i];
-                //System.out.println("Quantidade de Disciplinas: "+ b.getDisc().length + "\n");
-
-                System.out.println("Disciplina: "+ b.getDisciplina() + "\n");
-                System.out.println("Professor: "+ b.getProf() + "\n");
-                //System.out.println("Nota: "+ b.getNota() + "\n");
-                System.out.println("Sigla: "+ b.getSigla() + "\n");
-                System.out.println("\n---------------------------------\n");
-                j++;
-            }
-        }else{
-              System.out.println("Nenhum contato cadastrado!\n");
-            }
-        }*/
+    }  
     
-        
+    
+    
+    /*public  int buscar(String sigla) {
+          int indice = arm.getLista().indexOf(sigla);
+          return indice;
+       }*/
+    
         

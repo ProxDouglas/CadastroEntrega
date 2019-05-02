@@ -22,38 +22,28 @@ public class CadastroArrayList
         public void deletar(String ra){
             int indice ;
              indice = buscar(ra);
-             if(indice >= 0){
-              arm.getLista().remove(indice);
+             if(indice >= 0 && arm.getTamanho() > 0){
+              arm.deletar(indice);
           }
         }
         
-        /*
-         *  Existem dois metodos possiveis de busca abaixo um 
-         *  que usa a função de busca da biblioteca e outro que 
-         *  eh a propria função de busca.
-         */
-        
-        
-       /* public  int buscar(String ra) {
-          int indice = -1;
-          indice = arm.getLista().indexOf(ra);
-          return indice;
-       }*/
-       
+
        public  int buscar(String ra) {
           int indice = -1;
-          int i = 0;
-          Object obj[] = arm.getLista().toArray();//para ArrayList
-          //Object obj[] = ((VetDin)this.arm).getCad();//VetDin
-          Aluno a = (Aluno) obj[0];
-          if(obj != null){
-            while(!a.getRa().equals(ra) && i < obj.length){
-                a = (Aluno) obj[i+1];
-                i++;
-            }
-            if (a.getRa().equals(ra)){
-                indice = i;
-            }
+          if(arm.getTamanho() > 0){
+              int i = 0;
+              Object obj[] = arm.getLista().toArray();//para ArrayList
+              //Object obj[] = ((VetDin)this.arm).getCad();//VetDin
+              Aluno a = (Aluno) obj[0];
+              if(obj != null){
+                  while(!a.getRa().equals(ra) && i < obj.length){
+                      a = (Aluno) obj[i+1];
+                      i++;
+                    }
+                    if (a.getRa().equals(ra)){
+                        indice = i;
+                    }
+              }
           }
           return indice;
        }
@@ -77,3 +67,12 @@ public class CadastroArrayList
         }
        }
 }
+
+
+
+
+/* public  int buscar(String ra) {
+          int indice = -1;
+          indice = arm.getLista().indexOf(ra);
+          return indice;
+       }*/

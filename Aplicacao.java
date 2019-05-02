@@ -94,7 +94,7 @@ class Aplicacao
                    cadAluno.mostrar();
                     
                 }else if(opcao2 == 2)
-                    cadDisc.mostrar();
+                   cadDisc.mostrar();
                 
                 break;
             }

@@ -18,8 +18,10 @@ public class Lista {
     
     
     public void deletar(int indice) {
-        list.remove(indice);
-        setTamanho(list.size()-1);
+        if(getTamanho() > 0){
+            list.remove(indice);
+            setTamanho(list.size()-1);
+        }
     }
     
     
