@@ -1,0 +1,25 @@
+#BlueJ class context
+comment0.target=MenuSwingDisc
+comment1.params=titulo
+comment1.target=MenuSwingDisc(java.lang.String)
+comment10.params=
+comment10.target=boolean\ getClosed()
+comment11.params=
+comment11.target=void\ CloseFrame()
+comment2.params=ae
+comment2.target=void\ actionPerformed(java.awt.event.ActionEvent)
+comment3.params=
+comment3.target=java.lang.String\ getSigla()
+comment4.params=
+comment4.target=java.lang.String\ getDisc()
+comment5.params=
+comment5.target=java.lang.String\ getProf()
+comment6.params=discNome
+comment6.target=void\ setDisc(java.lang.String)
+comment7.params=discProf
+comment7.target=void\ setProf(java.lang.String)
+comment8.params=discSigla
+comment8.target=void\ setSigla(java.lang.String)
+comment9.params=closed
+comment9.target=void\ setClosed(boolean)
+numComments=12

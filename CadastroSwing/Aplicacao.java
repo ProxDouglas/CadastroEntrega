@@ -37,40 +37,49 @@ class Aplicacao
                 opcao2 = scan.nextInt();
                 
                 if(opcao2 == 1){
-                    do{
-                        do{
-                        MenuSwingAluno menu = new MenuSwingAluno("Cadastro");
+                    //do{
+                        //do{
+                        MenuSwingAluno menu = new MenuSwingAluno("Cadastro Aluno");
                         menu.setVisible(true);
-                        Aluno a = new Aluno("oi");
-                        
-                        a.setIdade(menu.getIdade());
-                        a.setId(menu.getRg());
-                        a.setRa(menu.getRa());
-                        //a.setSemestre(menu.lerSemestre());
-                        cadAluno.inserir(a);
                         menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-                       }while(idade == 0);
-                        System.out.println("1 - Inserir Aluno ");
-                        System.out.println("2 - Parar cadastro \n");
-                        escolha = scan.nextInt();
-                    }while(escolha != 2);
-                    escolha = 0;
+                        do{
+                        if(menu.getClosed() == true){
+                            Aluno a = new Aluno(menu.getNome());
+                        
+                            a.setIdade(menu.getIdade());
+                            a.setId(menu.getRg());
+                            a.setRa(menu.getRa());
+                            a.setSemestre(menu.getSemestre());
+                            cadAluno.inserir(a);
+                        }
+                    }while(menu.getClosed() == false);
+                       //}while(idade == 0);
+                        //System.out.println("1 - Inserir Aluno ");
+                        //System.out.println("2 - Parar cadastro \n");
+                        //escolha = scan.nextInt();
+                    //}while(escolha != 2);
+                    //escolha = 0;
                 }
                 
                 if(opcao2 == 2){
-                    do{
-                        aDisc = ent.lerDisciplina();
-                        bDisc = ent.lerProfessor();
-                        cDisc = ent.lerSigla();
-                 
-                        Disciplina disc = new Disciplina(aDisc, bDisc, cDisc);
-                        cadDisc.inserir(disc);
-                        
-                        System.out.println("1 - Inserir Disciplina ");
-                        System.out.println("2 - Parar cadastro ");
-                        escolha = ent.lerInt();
-                        }while(escolha != 2);
-                        escolha = 0;
+                    //do{
+                        MenuSwingDisc menu = new MenuSwingDisc("Cadastro Disciplina");
+                        menu.setVisible(true);
+                        menu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+                        do{
+                            aDisc = menu.getDisc();
+                            bDisc = menu.getProf();
+                            cDisc = menu.getSigla();
+                            if(menu.getClosed() == true){
+                                Disciplina disc = new Disciplina(aDisc, bDisc, cDisc);
+                                cadDisc.inserir(disc);
+                            }
+                        }while(menu.getClosed() == false);
+                        //System.out.println("1 - Inserir Disciplina ");
+                        //System.out.println("2 - Parar cadastro ");
+                        //escolha = ent.lerInt();
+                        //}while(escolha != 2);
+                        //escolha = 0;
                 }
                 
                 

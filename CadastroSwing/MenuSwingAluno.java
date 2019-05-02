@@ -16,24 +16,32 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     private JTextField idade;
     private JTextField rg;
     private JTextField ra;
+    private JTextField semestre;
     private JButton cadastro;
     private JButton sair;
     private JTextField tc;
     
-    public String AlunoNome;
-    public int AlunoIdade;
-    public String AlunoRg;
-    public String AlunoRa;
+    public String alunoNome;
+    public int alunoIdade;
+    public String alunoRg;
+    public String alunoRa;
+    public int alunoSemestre;
+    public boolean closed = false;
     
     MenuSwingAluno(String titulo)
     {
         super(titulo);
         setSize(350, 300);
         setLocation(1000, 300);
+        setNome(alunoNome);
+        setIdade(alunoIdade);
+        setRg(alunoRg);
+        setRa(alunoRa);
+        setSemestre(alunoSemestre);
+        setClosed(closed);
         
-       
         Container cp = getContentPane();
-        cp.setLayout(new GridLayout(5,2));
+        cp.setLayout(new GridLayout(6,2));
         
         cp.add(new JLabel("Nome", JLabel.LEFT));
         nome = new JTextField();
@@ -63,6 +71,13 @@ public class MenuSwingAluno extends JFrame implements ActionListener
         ra.setBackground(Color.WHITE);
         cp.add(ra);
         
+        cp.add(new JLabel("Semestre", JLabel.LEFT));
+        semestre = new JTextField();
+        semestre.addActionListener(this);
+        semestre.setToolTipText("Semestre do Aluno");
+        semestre.setBackground(Color.WHITE);
+        cp.add(semestre);
+        
         cp.add(cadastro = new JButton("Cadastrar"));
         cadastro.addActionListener(this);
         cadastro.setToolTipText("Cadastra o Aluno");
@@ -78,7 +93,8 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent ae)
     {
         if(ae.getActionCommand().equals("sair")){
-            System.exit(0);
+            CloseFrame();
+            break;
         }else{
                 
                         
@@ -86,8 +102,9 @@ public class MenuSwingAluno extends JFrame implements ActionListener
                     setIdade(Integer.parseInt(idade.getText()));
                     setRg(rg.getText());
                     setRa(ra.getText());
-                
-            
+                    setSemestre(Integer.parseInt(semestre.getText()));
+                    setClosed(true);
+                    CloseFrame();
          }
     }
     
@@ -95,41 +112,61 @@ public class MenuSwingAluno extends JFrame implements ActionListener
    
     public String getRa()
     {
-        return this.AlunoRa;
+        return this.alunoRa;
     }
     
     public String getNome()
     {
-        return this.AlunoNome;
+        return this.alunoNome;
     }
     
     public int getIdade()
     {
-        return this.AlunoIdade;
+        return this.alunoIdade;
     }
     
     public String getRg()
     {
-        return this.AlunoRg;
+        return this.alunoRg;
     }
     
-    protected void setNome(String AlunoNome)
+    public int getSemestre()
     {
-        this.AlunoNome = AlunoNome;
+        return this.alunoSemestre;
     }
     
-    protected void setIdade(int AlunoIdade)
+    protected void setNome(String alunoNome)
     {
-        this.AlunoIdade = AlunoIdade;
+        this.alunoNome = alunoNome;
     }
     
-    protected void setRg(String AlunoRg)
+    protected void setIdade(int alunoIdade)
     {
-        this.AlunoRg = AlunoRg;
+        this.alunoIdade = alunoIdade;
     }
     
-    protected void setRa(String AlunoRa)
+    protected void setSemestre(int alunoSemestre)
     {
-        this.AlunoRa = AlunoRa;
+        this.alunoIdade = alunoSemestre;
+    }
+    
+    protected void setRg(String alunoRg)
+    {
+        this.alunoRg = alunoRg;
+    }
+    
+    protected void setRa(String alunoRa)
+    {
+        this.alunoRa = alunoRa;
+    }
+    protected void setClosed(boolean closed){
+        this.closed = closed;
+    }
+    public boolean getClosed(){
+        return this.closed;
+    }
+    
+    public void CloseFrame(){
+        super.dispose();
     }
 }
