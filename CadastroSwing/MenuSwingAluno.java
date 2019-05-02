@@ -94,7 +94,6 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     {
         if(ae.getActionCommand().equals("sair")){
             CloseFrame();
-            break;
         }else{
                 
                         
@@ -147,7 +146,7 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     
     protected void setSemestre(int alunoSemestre)
     {
-        this.alunoIdade = alunoSemestre;
+        this.alunoSemestre = alunoSemestre;
     }
     
     protected void setRg(String alunoRg)

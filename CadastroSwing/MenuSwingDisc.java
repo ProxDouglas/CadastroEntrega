@@ -75,7 +75,6 @@ public class MenuSwingDisc extends JFrame implements ActionListener
     {
         if(ae.getActionCommand().equals("sair")){
             CloseFrame();
-            break;
         }else{
                 
                         
