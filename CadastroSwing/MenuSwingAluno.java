@@ -94,6 +94,7 @@ public class MenuSwingAluno extends JFrame implements ActionListener
    
     public void actionPerformed(ActionEvent ae)
     {
+        boolean excep = false;
         if(ae.getActionCommand().equals("sair")){
             setSair(true);
             CloseFrame();
@@ -101,13 +102,24 @@ public class MenuSwingAluno extends JFrame implements ActionListener
         }else{
                 
                         
-                    setNome(nome.getText());
+                   setNome(nome.getText());
+                   
+                    try{
                     setIdade(Integer.parseInt(idade.getText()));
-                    setRg(rg.getText());
-                    setRa(ra.getText());
+                   }catch(NumberFormatException e){
+                       System.out.println("Caractere invalido\n");
+                       System.out.println("Cadastro não efetuado \n");
+                    }
+                   setRg(rg.getText());
+                   setRa(ra.getText());
+                   try{
                     setSemestre(Integer.parseInt(semestre.getText()));
-                    setClosed(true);
-                    CloseFrame();
+                   }catch(NumberFormatException e){
+                        System.out.println("Caractere invalido\n");
+                       System.out.println("Cadastro não efetuado \n");
+                   }
+                   setClosed(true);
+                   CloseFrame();
          }
     }
     

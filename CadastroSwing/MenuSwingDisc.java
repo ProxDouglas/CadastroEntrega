@@ -22,7 +22,6 @@ public class MenuSwingDisc extends JFrame implements ActionListener
     public String discNome;
     public String discSigla;
     public String discProf;
-    public int alunoSemestre;
     public boolean closed = false;
     public boolean closedSair = false;
     
