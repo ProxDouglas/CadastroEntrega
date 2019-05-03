@@ -108,7 +108,7 @@ public class MenuSwingAluno extends JFrame implements ActionListener
                     setIdade(Integer.parseInt(idade.getText()));
                    }catch(NumberFormatException e){
                        System.out.println("Caractere invalido\n");
-                       System.out.println("Cadastro n√£o efetuado \n");
+                       System.out.println("Cadastro n„o efetuado \n");
                     }
                    setRg(rg.getText());
                    setRa(ra.getText());
@@ -116,7 +116,7 @@ public class MenuSwingAluno extends JFrame implements ActionListener
                     setSemestre(Integer.parseInt(semestre.getText()));
                    }catch(NumberFormatException e){
                         System.out.println("Caractere invalido\n");
-                       System.out.println("Cadastro n√£o efetuado \n");
+                       System.out.println("Cadastro n„o efetuado \n");
                    }
                    setClosed(true);
                    CloseFrame();

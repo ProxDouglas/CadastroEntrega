@@ -1,3 +1,14 @@
+
+/**
+ * 
+ * 
+ * @author Douglas Cavalcanti, Gabriel Ferreira, Raul Costa 
+ * @version 1.0 2019/05/03
+ */
+
+
+
+
 import java.util.Scanner;
 import javax.swing.JFrame;
 
@@ -12,7 +23,7 @@ class Aplicacao
         
         /*
          *      A troca de cadAluno por cadAlunoArrayList faz 
-         *  a troca de utilizaÃ§Ã£o do VetDin para o tipo Lista
+         *  a troca de utilização do VetDin para o tipo Lista
          *  que eh o arrayList
          */
         
@@ -86,6 +97,7 @@ class Aplicacao
                 break;
 
                 case 2:
+                
                 System.out.println("1 - Deletar Aluno ");
                 System.out.println("2 - Deletar Disciplina ");
                 opcao2 = scan.nextInt();

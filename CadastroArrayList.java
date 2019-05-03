@@ -31,7 +31,7 @@ public class CadastroArrayList
              indice = buscar(ra);
              if(indice >= 0 && arm.getTamanho() > 0){
               arm.deletar(indice);
-              deletar = false;
+              deletar = true;
           }
           return deletar ;
         }
