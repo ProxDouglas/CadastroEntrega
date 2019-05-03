@@ -2,7 +2,7 @@ import java.util.*;
 
 
 public class Lista {
-    int tam;
+    int tam = 0;
     ArrayList<Object> list ;
     public Lista(){
         setTamanho(0);
@@ -12,7 +12,7 @@ public class Lista {
     public void inserir(Object item){
         boolean verif =false;
         verif = list.add(item);
-        if(verif)setTamanho(list.size()+1);
+        if(verif)setTamanho(list.size());
         
     }
     
@@ -20,7 +20,7 @@ public class Lista {
     public void deletar(int indice) {
         if(getTamanho() > 0){
             list.remove(indice);
-            setTamanho(list.size()-1);
+            setTamanho(getTamanho()-1);
         }
     }
     
@@ -35,8 +35,8 @@ public class Lista {
     }
     */
     
-    public void setTamanho(int i){
-    this.tam = i;
+    public void setTamanho(int tam){
+    this.tam = tam;
     }
     
     public int getTamanho(){

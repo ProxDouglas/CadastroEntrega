@@ -15,7 +15,9 @@ public class CadastroArrayList
         }
         
         public void inserir(Aluno obj){
-            this.arm.inserir(obj);
+            Aluno a = (Aluno) obj;
+            int verif = buscar(a.getRa());
+            if(verif == -1)this.arm.inserir(obj);
             
         }
         
@@ -32,12 +34,14 @@ public class CadastroArrayList
           int indice = -1;
           if(arm.getTamanho() > 0){
               int i = 0;
+              boolean verif;
               Object obj[] = arm.getLista().toArray();//para ArrayList
-              //Object obj[] = ((VetDin)this.arm).getCad();//VetDin
-              Aluno a = (Aluno) obj[0];
-              if(obj != null){
+              verif = arm.getLista().isEmpty();
+              
+              if(obj != null && !verif){
+                  Aluno a = (Aluno) obj[0];
                   while(!a.getRa().equals(ra) && i < obj.length){
-                      a = (Aluno) obj[i+1];
+                      a = (Aluno) obj[i];
                       i++;
                     }
                     if (a.getRa().equals(ra)){
