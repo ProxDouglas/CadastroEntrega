@@ -14,19 +14,26 @@ public class CadastroArrayList
            arm.getLista().clear();
         }
         
-        public void inserir(Aluno obj){
+        public boolean inserir(Aluno obj){
+            boolean inserido = true;
             Aluno a = (Aluno) obj;
             int verif = buscar(a.getRa());
-            if(verif == -1)this.arm.inserir(obj);
-            
+            if(verif == -1){
+                this.arm.inserir(obj);
+                inserido = false;
+            }
+            return inserido;
         }
         
-        public void deletar(String ra){
+        public boolean deletar(String ra){
+            boolean deletar = false;
             int indice ;
              indice = buscar(ra);
              if(indice >= 0 && arm.getTamanho() > 0){
               arm.deletar(indice);
+              deletar = false;
           }
+          return deletar ;
         }
         
 

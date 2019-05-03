@@ -6,19 +6,26 @@ public class DisciplinasArrayList
            this.arm = new Lista();
         }
         
-        public void inserir(Object obj){
+        public boolean inserir(Object obj){
+            boolean inserido = true;
             Disciplina disc = (Disciplina) obj;
             int verif = buscar(disc.getSigla());
-            if(verif == -1)this.arm.inserir(obj);
-            
+            if(verif == -1){
+                this.arm.inserir(obj);
+                inserido = true;
+            }
+            return inserido ;
         }
         
-        public void deletar(String sigla){
+        public boolean deletar(String sigla){
+            boolean deletar = false;
             int indice ;
              indice = buscar(sigla);
              if(indice >= 0 && arm.getTamanho() > 0){
               arm.deletar(indice);
+              deletar = true;
           }
+          return deletar;
         }
         
        
