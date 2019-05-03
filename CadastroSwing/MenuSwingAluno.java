@@ -150,7 +150,7 @@ public class MenuSwingAluno extends JFrame implements ActionListener
     
     protected void setSemestre(int alunoSemestre)
     {
-        this.alunoIdade = alunoSemestre;
+        this.alunoSemestre = alunoSemestre;
     }
     
     protected void setRg(String alunoRg)
