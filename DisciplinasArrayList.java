@@ -7,8 +7,10 @@ public class DisciplinasArrayList
         }
         
         public void inserir(Object obj){
-            this.arm.inserir(obj);
-            //this.arm.inserir(obj);
+            Disciplina disc = (Disciplina) obj;
+            int verif = buscar(disc.getSigla());
+            if(verif == -1)this.arm.inserir(obj);
+            
         }
         
         public void deletar(String sigla){
@@ -24,12 +26,14 @@ public class DisciplinasArrayList
        public  int buscar(String sigla) {
           int indice = -1; 
           int i = 0;
+          boolean verif;
           Object obj[] = arm.getLista().toArray();
+          verif = arm.getLista().isEmpty();
           
-          Disciplina disc = (Disciplina) obj[0];
-          if(obj != null){
+          if(obj != null && !verif ){
+            Disciplina disc = (Disciplina) obj[0];
             while(!disc.getSigla().equals(sigla) && i < obj.length){
-                disc = (Disciplina) obj[i+1];
+                disc = (Disciplina) obj[i];
                 i++;
             }
             if (disc.getSigla().equals(sigla)){
